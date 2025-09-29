@@ -1,4 +1,4 @@
-### Hola 👋, Adrian Caballero Camacho
+### Hola, Adrian Caballero Camacho
 #### Soy ingeniero informatico
 ![Soy ingeniero informatico]
 
