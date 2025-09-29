@@ -1,6 +1,5 @@
 ### Hola, Adrian Caballero Camacho
 #### Soy ingeniero informatico
-![Soy ingeniero informatico]
 
 Me gusta el diseño FrontEnd
 
