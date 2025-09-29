@@ -1,6 +1,6 @@
 ### Hola 👋, Adrian Caballero Camacho
 #### Soy ingeniero informatico
-![Soy ingeniero informatico](https://arturssmirnovs.github.io/github-profile-readme-generator/images/banner.png)
+![Soy ingeniero informatico]
 
 Me gusta el diseño FrontEnd
 
