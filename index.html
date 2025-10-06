@@ -5,9 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adrián Caballero Camacho | Portafolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f7f3; /* Beige muy claro */
+      color: #3a3a3a;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
     }
     [data-animate] {
       opacity: 0;
@@ -20,66 +29,67 @@
     }
   </style>
 </head>
-<body class="bg-gray-900 text-gray-200 font-sans">
+<body>
 
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full bg-gray-950/80 backdrop-blur-md z-50">
+  <nav class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-md shadow-sm z-50">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-semibold text-white">Adrián Caballero Camacho</h1>
-      <ul class="hidden md:flex space-x-6 text-sm">
-        <li><a href="#inicio" class="hover:text-cyan-400 transition">Inicio</a></li>
-        <li><a href="#sobremi" class="hover:text-cyan-400 transition">Sobre mí</a></li>
-        <li><a href="#proyectos" class="hover:text-cyan-400 transition">Proyectos</a></li>
-        <li><a href="#experiencia" class="hover:text-cyan-400 transition">Experiencia</a></li>
-        <li><a href="#estudios" class="hover:text-cyan-400 transition">Estudios</a></li>
-        <li><a href="#certificaciones" class="hover:text-cyan-400 transition">Certificaciones</a></li>
-        <li><a href="#contacto" class="hover:text-cyan-400 transition">Contacto</a></li>
+      <h1 class="text-lg md:text-xl font-semibold text-gray-800">Adrián Caballero Camacho</h1>
+      <ul class="hidden md:flex space-x-6 text-sm text-gray-700">
+        <li><a href="#inicio" class="hover:text-amber-600 transition">Inicio</a></li>
+        <li><a href="#sobremi" class="hover:text-amber-600 transition">Sobre mí</a></li>
+        <li><a href="#proyectos" class="hover:text-amber-600 transition">Proyectos</a></li>
+        <li><a href="#experiencia" class="hover:text-amber-600 transition">Experiencia</a></li>
+        <li><a href="#estudios" class="hover:text-amber-600 transition">Estudios</a></li>
+        <li><a href="#certificaciones" class="hover:text-amber-600 transition">Certificaciones</a></li>
+        <li><a href="#contacto" class="hover:text-amber-600 transition">Contacto</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Inicio -->
   <section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center px-6" data-animate>
-    <h2 class="text-4xl md:text-6xl font-bold mb-4 text-white">Adrián Caballero Camacho</h2>
-    <p class="text-lg md:text-xl text-gray-400 mb-8">Ingeniero Informático • Desarrollador Full-Stack</p>
+    <h2 class="text-4xl md:text-6xl font-bold mb-4 text-gray-900">Adrián Caballero Camacho</h2>
+    <p class="text-lg md:text-xl text-gray-600 mb-8">Ingeniero Informático • Desarrollador Full-Stack</p>
     <div class="space-x-4">
-      <a href="#proyectos" class="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full transition">Ver proyectos</a>
-      <a href="#contacto" class="border border-cyan-500 text-cyan-400 px-6 py-3 rounded-full hover:bg-cyan-500 hover:text-white transition">Contactar</a>
+      <a href="#proyectos" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full transition">Ver proyectos</a>
+      <a href="#contacto" class="border border-amber-500 text-amber-700 px-6 py-3 rounded-full hover:bg-amber-500 hover:text-white transition">Contactar</a>
     </div>
   </section>
 
   <!-- Sobre mí -->
   <section id="sobremi" class="py-24 max-w-5xl mx-auto px-6" data-animate>
-    <h3 class="text-3xl font-semibold mb-6 text-cyan-400">Sobre mí</h3>
-    <p class="text-gray-300 leading-relaxed">
-      Soy estudiante de Ingeniería Informática en la Escuela Superior de Informática de la UCLM, con especial interés en el diseño de aplicaciones y la gestión de proyectos. Me motiva crear soluciones tecnológicas que aporten valor real, tanto desde el punto de vista funcional como en la experiencia del usuario.
-      Destaco por mi capacidad para trabajar en equipo, comunicar ideas con claridad y afrontar problemas con una mentalidad analítica y eficiente. Me involucro activamente en cada proyecto, buscando siempre mejorar los procesos y entregar resultados de calidad.
+    <h3 class="text-3xl font-semibold mb-6 text-amber-600">Sobre mí</h3>
+    <p class="text-gray-700 leading-relaxed">
+      Soy estudiante de Ingeniería Informática en la Escuela Superior de Informática de la UCLM, con especial interés en el diseño de aplicaciones y la gestión de proyectos. 
+      Me motiva crear soluciones tecnológicas que aporten valor real, tanto desde el punto de vista funcional como en la experiencia del usuario.
+      Destaco por mi capacidad para trabajar en equipo, comunicar ideas con claridad y afrontar problemas con una mentalidad analítica y eficiente.
       Mi objetivo a corto plazo es seguir aprendiendo y aplicar mis conocimientos en entornos profesionales que valoren la innovación, la colaboración y el crecimiento continuo.
     </p>
   </section>
 
   <!-- Proyectos -->
-  <section id="proyectos" class="py-24 bg-gray-800" data-animate>
+  <section id="proyectos" class="py-24 bg-[#f1eee8]" data-animate>
     <div class="max-w-6xl mx-auto px-6">
-      <h3 class="text-3xl font-semibold mb-10 text-cyan-400 text-center">Proyectos</h3>
+      <h3 class="text-3xl font-semibold mb-10 text-amber-600 text-center">Proyectos</h3>
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Proyecto ejemplo -->
-        <div class="bg-gray-900 rounded-xl p-6 hover:-translate-y-2 transition transform shadow-lg">
-          <h4 class="text-xl font-semibold mb-2 text-white">ETFPro</h4>
-          <p class="text-gray-400 text-sm mb-4">Aplicación web para analizar ETFs y gestionar carteras de inversión, usando APIs financieras y dashboard interactivo.</p>
-          <a href="#" class="text-cyan-400 hover:underline text-sm">Ver en GitHub →</a>
+        <div class="bg-white rounded-xl p-6 shadow-md hover:-translate-y-2 transition transform">
+          <h4 class="text-xl font-semibold mb-2 text-gray-900">ETFPro</h4>
+          <p class="text-gray-600 text-sm mb-4">Aplicación web para analizar ETFs y gestionar carteras de inversión, usando APIs financieras y dashboard interactivo.</p>
+          <a href="#" class="text-amber-700 hover:underline text-sm">Ver en GitHub →</a>
         </div>
 
-        <div class="bg-gray-900 rounded-xl p-6 hover:-translate-y-2 transition transform shadow-lg">
-          <h4 class="text-xl font-semibold mb-2 text-white">OptimaGest</h4>
-          <p class="text-gray-400 text-sm mb-4">Plataforma de auditoría interna para gestión de riesgos y controles IT basada en COBIT y procesos de negocio.</p>
-          <a href="#" class="text-cyan-400 hover:underline text-sm">Ver en GitHub →</a>
+        <div class="bg-white rounded-xl p-6 shadow-md hover:-translate-y-2 transition transform">
+          <h4 class="text-xl font-semibold mb-2 text-gray-900">OptimaGest</h4>
+          <p class="text-gray-600 text-sm mb-4">Plataforma de auditoría interna para gestión de riesgos y controles IT basada en COBIT y procesos de negocio.</p>
+          <a href="#" class="text-amber-700 hover:underline text-sm">Ver en GitHub →</a>
         </div>
 
-        <div class="bg-gray-900 rounded-xl p-6 hover:-translate-y-2 transition transform shadow-lg">
-          <h4 class="text-xl font-semibold mb-2 text-white">Rush Hour Game</h4>
-          <p class="text-gray-400 text-sm mb-4">Juego lógico en Java basado en el clásico Rush Hour, con análisis de niveles y sistema de comandos CLI.</p>
-          <a href="#" class="text-cyan-400 hover:underline text-sm">Ver en GitHub →</a>
+        <div class="bg-white rounded-xl p-6 shadow-md hover:-translate-y-2 transition transform">
+          <h4 class="text-xl font-semibold mb-2 text-gray-900">Rush Hour Game</h4>
+          <p class="text-gray-600 text-sm mb-4">Juego lógico en Java basado en el clásico Rush Hour, con análisis de niveles y sistema de comandos CLI.</p>
+          <a href="#" class="text-amber-700 hover:underline text-sm">Ver en GitHub →</a>
         </div>
       </div>
     </div>
@@ -87,15 +97,15 @@
 
   <!-- Experiencia -->
   <section id="experiencia" class="py-24 max-w-5xl mx-auto px-6" data-animate>
-    <h3 class="text-3xl font-semibold mb-6 text-cyan-400">Experiencia</h3>
-    <p class="text-gray-300">Próximamente añadir experiencias profesionales o prácticas relevantes.</p>
+    <h3 class="text-3xl font-semibold mb-6 text-amber-600">Experiencia</h3>
+    <p class="text-gray-700">Próximamente añadir experiencias profesionales o prácticas relevantes.</p>
   </section>
 
   <!-- Estudios -->
-  <section id="estudios" class="py-24 bg-gray-800" data-animate>
+  <section id="estudios" class="py-24 bg-[#f1eee8]" data-animate>
     <div class="max-w-5xl mx-auto px-6">
-      <h3 class="text-3xl font-semibold mb-6 text-cyan-400">Estudios</h3>
-      <ul class="list-disc ml-6 text-gray-300 space-y-2">
+      <h3 class="text-3xl font-semibold mb-6 text-amber-600">Estudios</h3>
+      <ul class="list-disc ml-6 text-gray-700 space-y-2">
         <li>Grado en Ingeniería Informática – Universidad de Castilla-La Mancha (UCLM)</li>
         <li>Cursos de especialización en desarrollo web, redes y sistemas distribuidos</li>
       </ul>
@@ -104,28 +114,28 @@
 
   <!-- Certificaciones -->
   <section id="certificaciones" class="py-24 max-w-5xl mx-auto px-6" data-animate>
-    <h3 class="text-3xl font-semibold mb-6 text-cyan-400">Certificaciones</h3>
-    <ul class="list-disc ml-6 text-gray-300 space-y-2">
+    <h3 class="text-3xl font-semibold mb-6 text-amber-600">Certificaciones</h3>
+    <ul class="list-disc ml-6 text-gray-700 space-y-2">
       <li>Inglés B1 – Trinity College London</li>
       <li>Certificados técnicos (añadir más adelante)</li>
     </ul>
   </section>
 
   <!-- Contacto -->
-  <section id="contacto" class="py-24 bg-gray-800" data-animate>
+  <section id="contacto" class="py-24 bg-[#f1eee8]" data-animate>
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-semibold mb-6 text-cyan-400">Contacto</h3>
-      <p class="text-gray-400 mb-8">¿Quieres contactar conmigo? Escríbeme o visita mis redes.</p>
+      <h3 class="text-3xl font-semibold mb-6 text-amber-600">Contacto</h3>
+      <p class="text-gray-600 mb-8">¿Quieres contactar conmigo? Escríbeme o visita mis redes.</p>
       <div class="space-x-6">
-        <a href="mailto:adriancaballero@example.com" class="text-cyan-400 hover:underline">Email</a>
-        <a href="https://github.com/aadriii03" target="_blank" class="text-cyan-400 hover:underline">GitHub</a>
-        <a href="https://linkedin.com/in/adriancaballerocamacho" target="_blank" class="text-cyan-400 hover:underline">LinkedIn</a>
+        <a href="mailto:adriancaballero@example.com" class="text-amber-700 hover:underline">Email</a>
+        <a href="https://github.com/aadriii03" target="_blank" class="text-amber-700 hover:underline">GitHub</a>
+        <a href="https://linkedin.com/in/adriancaballerocamacho" target="_blank" class="text-amber-700 hover:underline">LinkedIn</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-6 text-gray-500 text-sm bg-gray-950">
+  <footer class="text-center py-6 text-gray-500 text-sm bg-white border-t border-gray-200">
     © 2025 Adrián Caballero Camacho – Todos los derechos reservados.
   </footer>
 
