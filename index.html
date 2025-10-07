@@ -138,6 +138,22 @@
   .menu-btn:active {
     transform: scale(0.95);
   }
+
+  /* 🔹 Estilos específicos para el menú móvil */
+#mobile-menu .mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#mobile-menu .mobile-link:hover {
+  background-color: rgba(28, 61, 90, 0.1);
+  transform: translateY(-2px);
+}
+
   
 
   </style>
@@ -175,18 +191,19 @@
 </header>
 
 <!-- 🔹 MENÚ DESPLEGABLE MÓVIL -->
-<nav id="mobile-menu"
+  <nav id="mobile-menu"
     class="hidden fixed top-[60px] left-0 w-full bg-white/95 backdrop-blur-md shadow-md flex flex-col items-center space-y-4 py-6 text-[#1c3d5a] font-medium z-40 md:hidden">
-  <a href="#inicio" class="menu-btn flex items-center gap-2"><span>Inicio</span></a>
-  <a href="#sobremi" class="menu-btn flex items-center gap-2"><span>Sobre mí</span></a>
-  <a href="#lenguajes" class="menu-btn flex items-center gap-2"><span>Lenguajes</span></a>
-  <a href="#herramientas" class="menu-btn flex items-center gap-2"><span>Herramientas</span></a>
-  <a href="#proyectos-mejorados" class="menu-btn flex items-center gap-2"><span>Proyectos</a>
-  <a href="#experiencia" class="menu-btn flex items-center gap-2"><span>Experiencia</a>
-  <a href="#estudios" class="menu-btn flex items-center gap-2"><span>Estudios</a>
-  <a href="#certificaciones" class="menu-btn flex items-center gap-2"><span>Certificaciones</a>
-  <a href="#contacto" class="menu-btn flex items-center gap-2"><span>Contacto</a>
+  <a href="#inicio" class="mobile-link">🏠 Inicio</a>
+  <a href="#sobremi" class="mobile-link">👤 Sobre mí</a>
+  <a href="#lenguajes" class="mobile-link">💻 Lenguajes</a>
+  <a href="#herramientas" class="mobile-link">⚙️ Herramientas</a>
+  <a href="#proyectos-mejorados" class="mobile-link">🚀 Proyectos</a>
+  <a href="#experiencia" class="mobile-link">💼 Experiencia</a>
+  <a href="#estudios" class="mobile-link">🎓 Estudios</a>
+  <a href="#certificaciones" class="mobile-link">🧾 Certificaciones</a>
+  <a href="#contacto" class="mobile-link">📞 Contacto</a>
 </nav>
+
 
 <!-- 🔹 MENÚ LATERAL — SOLO EN PANTALLAS GRANDES -->
 <div id="side-menu" class="hidden lg:flex fixed top-1/2 right-4 transform -translate-y-1/2 flex-col items-center space-y-4 z-50">
