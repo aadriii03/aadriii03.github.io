@@ -58,13 +58,6 @@
       }
     }
 
-    /* 🔹 En pantallas pequeñas, esconder el menú lateral hasta que pongamos el menú móvil */
-    @media (max-width: 1024px) {
-      #side-menu {
-        display: none;
-      }
-    }
-
     /* Hover en proyectos */
     .project-card {
       transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -89,6 +82,10 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+
+    @media (max-width: 1023px) {
+    #side-menu { display: none !important; }
     }
 
 /* Menú lateral compacto y moderno */
