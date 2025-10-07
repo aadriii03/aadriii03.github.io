@@ -154,7 +154,28 @@
   transform: translateY(-2px);
 }
 
-  
+/* Fondo elegante general */
+#conocimientos {
+  background: linear-gradient(135deg, #f9f9f7, #ebe8e3);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Mejora de contraste visual en bordes */
+#conocimientos .border-c8c8c8 {
+  border-color: #b7b7b7 !important;
+}
+
+#conocimientos .border-c0bbb5 {
+  border-color: #a49f99 !important;
+}
+
+/* Hover y animación sutil en las barras */
+.progress-bar:hover {
+  filter: brightness(1.15);
+  transform: scale(1.03);
+  transition: all 0.3s ease;
+}
+
 
   </style>
 </head>
@@ -184,19 +205,19 @@
   <!-- Botón hamburguesa -->
   <button id="menu-toggle" class="text-[#1c3d5a] focus:outline-none">
     <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-         stroke-width="2" stroke="currentColor" class="w-7 h-7">
+        stroke-width="2" stroke="currentColor" class="w-7 h-7">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
   </button>
 </header>
 
 <!-- 🔹 MENÚ DESPLEGABLE MÓVIL -->
-  <nav id="mobile-menu"
+<nav id="mobile-menu"
     class="hidden fixed top-[60px] left-0 w-full bg-white/95 backdrop-blur-md shadow-md flex flex-col items-center space-y-4 py-6 text-[#1c3d5a] font-medium z-40 md:hidden">
+  
   <a href="#inicio" class="mobile-link">🏠 Inicio</a>
   <a href="#sobremi" class="mobile-link">👤 Sobre mí</a>
-  <a href="#lenguajes" class="mobile-link">💻 Lenguajes</a>
-  <a href="#herramientas" class="mobile-link">⚙️ Herramientas</a>
+  <a href="#conocimientos" class="mobile-link">💻 Conocimientos</a>
   <a href="#proyectos-mejorados" class="mobile-link">🚀 Proyectos</a>
   <a href="#experiencia" class="mobile-link">💼 Experiencia</a>
   <a href="#estudios" class="mobile-link">🎓 Estudios</a>
@@ -209,14 +230,14 @@
 <div id="side-menu" class="hidden lg:flex fixed top-1/2 right-4 transform -translate-y-1/2 flex-col items-center space-y-4 z-50">
   <a href="#inicio" class="menu-btn"><span>🏠</span></a>
   <a href="#sobremi" class="menu-btn"><span>👤</span></a>
-  <a href="#lenguajes" class="menu-btn"><span>💻</span></a>
-  <a href="#herramientas" class="menu-btn"><span>⚙️</span></a>
+  <a href="#conocimientos" class="menu-btn"><span>💻</span></a>
   <a href="#proyectos-mejorados" class="menu-btn"><span>🚀</span></a>
   <a href="#experiencia" class="menu-btn"><span>💼</span></a>
   <a href="#estudios" class="menu-btn"><span>🎓</span></a>
   <a href="#certificaciones" class="menu-btn"><span>🧾</span></a>
   <a href="#contacto" class="menu-btn"><span>📞</span></a>
 </div>
+
 
 <!-- Script -->
 <script>
@@ -309,98 +330,143 @@ document.addEventListener("DOMContentLoaded", type);
     </p>
   </section>
 
-  <!-- Lenguajes -->
-  <section id="lenguajes" class="py-24 bg-[#f3f2ef]" data-animate>
-    <div class="max-w-5xl mx-auto px-6">
-      <h3 class="text-3xl font-semibold mb-10 text-[#1c3d5a] text-center">Lenguajes de programación</h3>
-      <!-- Barras de progreso -->
-      <div class="space-y-8">
-        <!-- Python -->
-        <div>
-          <div class="flex justify-between mb-2"><span class="text-gray-800 font-medium">Python</span><span class="text-gray-700 font-semibold progress-text" data-value="50">0%</span></div>
-          <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner"><div class="progress-bar h-5 rounded-full w-[0%]" data-value="50" style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div></div>
-        </div>
-        <!-- Java -->
-        <div>
-          <div class="flex justify-between mb-2"><span class="text-gray-800 font-medium">Java</span><span class="text-gray-700 font-semibold progress-text" data-value="80">0%</span></div>
-          <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner"><div class="progress-bar h-5 rounded-full w-[0%]" data-value="80" style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div></div>
-        </div>
-        <!-- C++ -->
-        <div>
-          <div class="flex justify-between mb-2"><span class="text-gray-800 font-medium">C++</span><span class="text-gray-700 font-semibold progress-text" data-value="70">0%</span></div>
-          <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner"><div class="progress-bar h-5 rounded-full w-[0%]" data-value="70" style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div></div>
-        </div>
-        <!-- SQL -->
-        <div>
-          <div class="flex justify-between mb-2"><span class="text-gray-800 font-medium">SQL</span><span class="text-gray-700 font-semibold progress-text" data-value="65">0%</span></div>
-          <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner"><div class="progress-bar h-5 rounded-full w-[0%]" data-value="65" style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div></div>
-        </div>
-        <!-- HTML -->
-        <div>
-          <div class="flex justify-between mb-2"><span class="text-gray-800 font-medium">HTML</span><span class="text-gray-700 font-semibold progress-text" data-value="65">0%</span></div>
-          <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner"><div class="progress-bar h-5 rounded-full w-[0%]" data-value="65" style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div></div>
-        </div>
-        <!-- CSS -->
-        <div>
-          <div class="flex justify-between mb-2"><span class="text-gray-800 font-medium">CSS</span><span class="text-gray-700 font-semibold progress-text" data-value="65">0%</span></div>
-          <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner"><div class="progress-bar h-5 rounded-full w-[0%]" data-value="65" style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div></div>
+<!-- 🔹 Conocimientos Tecnológicos -->
+<section id="conocimientos" class="py-24" data-animate>
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center">
+      Conocimientos Tecnológicos
+    </h3>
+
+    <!-- Contenedor dos columnas -->
+    <div class="grid md:grid-cols-2 gap-12">
+
+      <!-- 🔸 Columna Izquierda - Lenguajes -->
+      <div class="bg-white/85 rounded-2xl shadow-lg p-8 border-[1.5px] border-[#c8c8c8] hover:shadow-xl transition duration-300">
+        <h4 class="text-2xl font-semibold text-[#1c3d5a] mb-8 text-center md:text-left relative">
+          Lenguajes de programación
+          <span class="absolute bottom-[-8px] left-0 w-16 h-[3px] bg-[#1c3d5a] rounded-full"></span>
+        </h4>
+
+        <div class="space-y-8">
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-gray-800 font-medium">Python</span>
+              <span class="text-gray-700 font-semibold progress-text" data-value="50">0%</span>
+            </div>
+            <div class="w-full bg-gray-200/60 rounded-full h-4 overflow-hidden shadow-inner">
+              <div class="progress-bar h-4 rounded-full w-[0%]" data-value="50"
+                  style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-gray-800 font-medium">Java</span>
+              <span class="text-gray-700 font-semibold progress-text" data-value="80">0%</span>
+            </div>
+            <div class="w-full bg-gray-200/60 rounded-full h-4 overflow-hidden shadow-inner">
+              <div class="progress-bar h-4 rounded-full w-[0%]" data-value="80"
+                  style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-gray-800 font-medium">C++</span>
+              <span class="text-gray-700 font-semibold progress-text" data-value="70">0%</span>
+            </div>
+            <div class="w-full bg-gray-200/60 rounded-full h-4 overflow-hidden shadow-inner">
+              <div class="progress-bar h-4 rounded-full w-[0%]" data-value="70"
+                  style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-gray-800 font-medium">SQL</span>
+              <span class="text-gray-700 font-semibold progress-text" data-value="65">0%</span>
+            </div>
+            <div class="w-full bg-gray-200/60 rounded-full h-4 overflow-hidden shadow-inner">
+              <div class="progress-bar h-4 rounded-full w-[0%]" data-value="65"
+                  style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-gray-800 font-medium">HTML</span>
+              <span class="text-gray-700 font-semibold progress-text" data-value="65">0%</span>
+            </div>
+            <div class="w-full bg-gray-200/60 rounded-full h-4 overflow-hidden shadow-inner">
+              <div class="progress-bar h-4 rounded-full w-[0%]" data-value="65"
+                  style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-gray-800 font-medium">CSS</span>
+              <span class="text-gray-700 font-semibold progress-text" data-value="65">0%</span>
+            </div>
+            <div class="w-full bg-gray-200/60 rounded-full h-4 overflow-hidden shadow-inner">
+              <div class="progress-bar h-4 rounded-full w-[0%]" data-value="65"
+                  style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Herramientas y Entornos de Desarrollo -->
-<section id="herramientas" class="py-24 bg-[#f1eee8]" data-animate>
-  <div class="max-w-5xl mx-auto px-6">
-    <h3 class="text-3xl font-semibold mb-10 text-[#1c3d5a] text-center">Herramientas y entornos de desarrollo</h3>
-    
-    <div class="space-y-8">
+      <!-- 🔹 Columna Derecha - Herramientas -->
+      <div class="bg-[#f9f7f3]/95 rounded-2xl shadow-lg p-8 border-[1.5px] border-[#c0bbb5] hover:shadow-xl transition duration-300">
+        <h4 class="text-2xl font-semibold text-[#1c3d5a] mb-8 text-center md:text-left relative">
+          Herramientas y entornos de desarrollo
+          <span class="absolute bottom-[-8px] left-0 w-16 h-[3px] bg-[#1c3d5a] rounded-full"></span>
+        </h4>
 
-      <!-- Visual Studio Code -->
-      <div>
-        <div class="flex justify-between mb-2">
-          <span class="text-gray-800 font-medium">Visual Studio Code</span>
-          <span class="text-gray-700 font-semibold progress-text" data-value="90">0%</span>
-        </div>
-        <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner">
-          <div class="progress-bar h-5 rounded-full w-[0%]" data-value="90"
-               style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
-        </div>
-      </div>
+        <div class="space-y-8">
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-gray-800 font-medium">Visual Studio Code</span>
+              <span class="text-gray-700 font-semibold progress-text" data-value="90">0%</span>
+            </div>
+            <div class="w-full bg-gray-200/60 rounded-full h-4 overflow-hidden shadow-inner">
+              <div class="progress-bar h-4 rounded-full w-[0%]" data-value="90"
+                  style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+            </div>
+          </div>
 
-      <!-- Android Studio -->
-      <div>
-        <div class="flex justify-between mb-2">
-          <span class="text-gray-800 font-medium">Android Studio</span>
-          <span class="text-gray-700 font-semibold progress-text" data-value="60">0%</span>
-        </div>
-        <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner">
-          <div class="progress-bar h-5 rounded-full w-[0%]" data-value="70"
-               style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
-        </div>
-      </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-gray-800 font-medium">Android Studio</span>
+              <span class="text-gray-700 font-semibold progress-text" data-value="70">0%</span>
+            </div>
+            <div class="w-full bg-gray-200/60 rounded-full h-4 overflow-hidden shadow-inner">
+              <div class="progress-bar h-4 rounded-full w-[0%]" data-value="70"
+                  style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+            </div>
+          </div>
 
-      <!-- IntelliJ IDEA -->
-      <div>
-        <div class="flex justify-between mb-2">
-          <span class="text-gray-800 font-medium">IDE Eclipse</span>
-          <span class="text-gray-700 font-semibold progress-text" data-value="70">0%</span>
-        </div>
-        <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner">
-          <div class="progress-bar h-5 rounded-full w-[0%]" data-value="60"
-               style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
-        </div>
-      </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-gray-800 font-medium">Eclipse</span>
+              <span class="text-gray-700 font-semibold progress-text" data-value="60">0%</span>
+            </div>
+            <div class="w-full bg-gray-200/60 rounded-full h-4 overflow-hidden shadow-inner">
+              <div class="progress-bar h-4 rounded-full w-[0%]" data-value="60"
+                  style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+            </div>
+          </div>
 
-            <!-- GitHub -->
-      <div>
-        <div class="flex justify-between mb-2">
-          <span class="text-gray-800 font-medium">GitHub</span>
-          <span class="text-gray-700 font-semibold progress-text" data-value="80">0%</span>
-        </div>
-        <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner">
-          <div class="progress-bar h-5 rounded-full w-[0%]" data-value="80"
-               style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-gray-800 font-medium">GitHub</span>
+              <span class="text-gray-700 font-semibold progress-text" data-value="80">0%</span>
+            </div>
+            <div class="w-full bg-gray-200/60 rounded-full h-4 overflow-hidden shadow-inner">
+              <div class="progress-bar h-4 rounded-full w-[0%]" data-value="80"
+                  style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -409,26 +475,61 @@ document.addEventListener("DOMContentLoaded", type);
 </section>
 
 
-  <!-- Proyectos -->
-  <section id="proyectos-mejorados" class="py-24 bg-[#ece9e4]" data-animate>
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-semibold mb-10 text-[#1c3d5a] text-center">Proyectos</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300">
-          <img src="rushour.png" alt="Rush Hour" class="w-full h-48 object-cover">
-          <div class="p-6"><h3 class="text-xl font-semibold text-[#1c3d5a] mb-2">Rush Hour</h3><p class="text-gray-700 text-sm">Juego lógico en Java basado en el clásico Rush Hour, con análisis de niveles y sistema de comandos CLI.</p></div>
-        </div>
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300">
-          <img src="etfpro.png" alt="ETFPro" class="w-full h-48 object-cover">
-          <div class="p-6"><h3 class="text-xl font-semibold text-[#1c3d5a] mb-2">ETFPro</h3><p class="text-gray-700 text-sm">Aplicación web para analizar ETFs y gestionar carteras de inversión, integrando APIs financieras y dashboards interactivos.</p></div>
-        </div>
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300">
-          <img src="optimagest.png" alt="OptimaGest" class="w-full h-48 object-cover">
-          <div class="p-6"><h3 class="text-xl font-semibold text-[#1c3d5a] mb-2">OptimaGest</h3><p class="text-gray-700 text-sm">Plataforma de auditoría interna para gestión de riesgos y controles IT basada en COBIT y procesos de negocio.</p></div>
+
+
+  <!-- 🔹 Proyectos -->
+<section id="proyectos-mejorados" class="py-24 bg-gradient-to-br from-[#f9f9f7] to-[#ebe8e3]" data-animate>
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center">
+      Proyectos
+    </h2>
+
+    <!-- Grid de tarjetas -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- 🧩 Proyecto 1 -->
+      <div class="bg-white/85 border-[1.5px] border-[#c8c8c8] rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+        <img src="rushour.png" alt="Rush Hour" class="w-full h-48 object-cover border-b border-gray-200">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[#1c3d5a] mb-2 flex items-center gap-2">
+            🚗 Rush Hour
+          </h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Juego lógico en Java basado en el clásico <em>Rush Hour</em>, con análisis de niveles y sistema de comandos CLI.
+          </p>
         </div>
       </div>
+
+      <!-- 🧩 Proyecto 2 -->
+      <div class="bg-[#f9f7f3]/95 border-[1.5px] border-[#bfbab5] rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+        <img src="etfpro.png" alt="ETFPro" class="w-full h-48 object-cover border-b border-gray-200">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[#1c3d5a] mb-2 flex items-center gap-2">
+            📊 ETFPro
+          </h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Aplicación web para analizar ETFs y gestionar carteras de inversión, integrando APIs financieras y dashboards interactivos.
+          </p>
+        </div>
+      </div>
+
+      <!-- 🧩 Proyecto 3 -->
+      <div class="bg-white/85 border-[1.5px] border-[#c8c8c8] rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+        <img src="optimagest.png" alt="OptimaGest" class="w-full h-48 object-cover border-b border-gray-200">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[#1c3d5a] mb-2 flex items-center gap-2">
+            🧮 OptimaGest
+          </h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Plataforma de auditoría interna para gestión de riesgos y controles IT basada en COBIT y procesos de negocio.
+          </p>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
 <!-- Experiencia -->
 <section id="experiencia" class="py-24 bg-[#f9f7f3]" data-animate>
@@ -488,7 +589,6 @@ document.addEventListener("DOMContentLoaded", type);
           <h4 class="text-lg font-semibold text-[#1c3d5a]">B1 Trinity College London</h4>
           <p class="text-sm text-gray-600 mb-2">2019</p>
           <p class="text-gray-700 leading-relaxed">
-            Trinity College London.  
             Certificación oficial de nivel B1 en el dominio del inglés.
           </p>
         </div>
@@ -500,10 +600,9 @@ document.addEventListener("DOMContentLoaded", type);
           <span class="text-white text-lg">🌍</span>
         </div>
         <div>
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">Curso de Inmersión Lingüística Inglesa</h4>
+          <h4 class="text-lg font-semibold text-[#1c3d5a]">Curso de Inmersión Lingüística Inglesa - Universidad Internacional Menéndez Pelayo (UIMP)</h4>
           <p class="text-sm text-gray-600 mb-2">2019</p>
-          <p class="text-gray-700 leading-relaxed">
-            Universidad Internacional Menéndez Pelayo (UIMP).  
+          <p class="text-gray-700 leading-relaxed">  
             Curso intensivo de 40 horas enfocado en la competencia oral y la fluidez comunicativa, 
             con la participación de personas de habla inglesa procedentes de Reino Unido, Canadá, Estados Unidos e Irlanda.
           </p>
@@ -516,10 +615,9 @@ document.addEventListener("DOMContentLoaded", type);
           <span class="text-white text-lg">🎓</span>
         </div>
         <div>
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">Grado en Ingeniería Informática</h4>
+          <h4 class="text-lg font-semibold text-[#1c3d5a]">Grado en Ingeniería Informática - Escuela Superior de Informática (Ciudad Real), Universidad de Castilla-La Mancha</h4>
           <p class="text-sm text-gray-600 mb-2">2019 – Actualidad</p>
           <p class="text-gray-700 leading-relaxed">
-            Escuela Superior de Informática (Ciudad Real), Universidad de Castilla-La Mancha.  
             Especialización en tecnologías de la información (TI).
           </p>
         </div>
