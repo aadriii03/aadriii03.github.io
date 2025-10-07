@@ -7,6 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+
     html {
       scroll-behavior: smooth;
     }
@@ -76,12 +77,62 @@
       }
     }
 
-    
+/* Menú lateral compacto y moderno */
+#side-menu {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 4px;
+  z-index: 100;
+}
+
+/* Botones del menú */
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(28, 61, 90, 0.1);
+  border-radius: 50%;
+  font-size: 18px;
+  color: #1c3d5a;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover */
+.menu-btn:hover {
+  transform: scale(1.15);
+  background-color: #1c3d5a;
+  color: #fff;
+}
+
+/* Efecto visual al hacer clic */
+.menu-btn:active {
+  transform: scale(0.95);
+}
+
+/* Estado activo: la sección visible */
+.menu-btn.active {
+  background-color: #1c3d5a;
+  color: white;
+  box-shadow: 0 0 10px rgba(28, 61, 90, 0.4);
+}
+
+
+  /* Efecto visual al hacer clic */
+  .menu-btn:active {
+    transform: scale(0.95);
+  }
+
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Navbar 
   <nav class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-md shadow-sm z-50">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-lg md:text-xl font-semibold text-gray-800">Adrián Caballero Camacho</h1>
@@ -96,7 +147,7 @@
         <li><a href="#contacto" class="hover:text-[#1c3d5a] transition">Contacto</a></li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
 
   <!-- Inicio -->
 <section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center px-6" data-animate>
@@ -152,6 +203,22 @@ function type() {
 document.addEventListener("DOMContentLoaded", type);
 </script>
 
+<!-- Menú lateral derecho -->
+<div id="side-menu" class="fixed top-1/2 right-4 transform -translate-y-1/2 flex flex-col items-center space-y-4 z-50">
+
+
+  <!-- Iconos -->
+  <a href="#inicio" class="menu-btn"><span>🏠</span></a>
+  <a href="#sobremi" class="menu-btn"><span>👤</span></a>
+  <a href="#lenguajes" class="menu-btn"><span>💻</span></a>
+  <a href="#herramientas" class="menu-btn"><span>⚙️</span></a>
+  <a href="#proyectos-mejorados" class="menu-btn"><span>🚀</span></a>
+  <a href="#experiencia" class="menu-btn"><span>💼</span></a>
+  <a href="#estudios" class="menu-btn"><span>🎓</span></a>
+  <a href="#certificaciones" class="menu-btn"><span>🧾</span></a>
+  <a href="#contacto" class="menu-btn"><span>📞</span></a>
+
+</div>
 
   <!-- Sobre mí -->
   <section id="sobremi" class="py-24 max-w-5xl mx-auto px-6" data-animate>
@@ -165,7 +232,7 @@ document.addEventListener("DOMContentLoaded", type);
   </section>
 
   <!-- Lenguajes -->
-  <section id="Lenguajes" class="py-24 bg-[#f3f2ef]" data-animate>
+  <section id="lenguajes" class="py-24 bg-[#f3f2ef]" data-animate>
     <div class="max-w-5xl mx-auto px-6">
       <h3 class="text-3xl font-semibold mb-10 text-[#1c3d5a] text-center">Lenguajes de programación</h3>
       <!-- Barras de progreso -->
@@ -513,6 +580,25 @@ document.addEventListener("DOMContentLoaded", type);
     bars.forEach(bar => observerBars.observe(bar));
   </script>
   
+  <script>
+    // Detectar la sección visible y resaltar el icono activo
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("#side-menu .menu-btn");
+
+    const observerMenu = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute("id");
+        const link = document.querySelector(`#side-menu a[href="#${id}"]`);
+        if (entry.isIntersecting) {
+          navLinks.forEach(btn => btn.classList.remove("active"));
+          link?.classList.add("active");
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(section => observerMenu.observe(section));
+  </script>
+
 
 </body>
 </html>
