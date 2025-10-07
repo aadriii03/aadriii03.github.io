@@ -163,6 +163,71 @@
     </div>
   </nav> -->
 
+  <!-- 🔹 MENÚ RESPONSIVE -->
+<header class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-md shadow-sm z-50 flex justify-between items-center px-6 py-3 md:hidden">
+  <h1 class="text-lg font-semibold text-[#1c3d5a]">Adrián Caballero</h1>
+
+  <!-- Botón hamburguesa -->
+  <button id="menu-toggle" class="text-[#1c3d5a] focus:outline-none">
+    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+         stroke-width="2" stroke="currentColor" class="w-7 h-7">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+</header>
+
+<!-- 🔹 MENÚ DESPLEGABLE MÓVIL -->
+<nav id="mobile-menu"
+     class="hidden fixed top-[60px] left-0 w-full bg-white/95 backdrop-blur-md shadow-md flex flex-col items-center space-y-4 py-6 text-[#1c3d5a] font-medium z-40 md:hidden">
+  <a href="#inicio" class="menu-btn flex items-center gap-2"><span>🏠</span>Inicio</a>
+  <a href="#sobremi" class="menu-btn flex items-center gap-2"><span>👤</span>Sobre mí</a>
+  <a href="#lenguajes" class="menu-btn flex items-center gap-2"><span>💻</span>Lenguajes</a>
+  <a href="#herramientas" class="menu-btn flex items-center gap-2"><span>⚙️</span>Herramientas</a>
+  <a href="#proyectos-mejorados" class="menu-btn flex items-center gap-2"><span>🚀</span>Proyectos</a>
+  <a href="#experiencia" class="menu-btn flex items-center gap-2"><span>💼</span>Experiencia</a>
+  <a href="#estudios" class="menu-btn flex items-center gap-2"><span>🎓</span>Estudios</a>
+  <a href="#certificaciones" class="menu-btn flex items-center gap-2"><span>🧾</span>Certificaciones</a>
+  <a href="#contacto" class="menu-btn flex items-center gap-2"><span>📞</span>Contacto</a>
+</nav>
+
+<!-- 🔹 MENÚ LATERAL (solo escritorio, se mantiene tu estilo) -->
+<div id="side-menu" class="fixed top-1/2 right-4 transform -translate-y-1/2 flex-col items-center space-y-4 z-50 hidden md:flex">
+  <a href="#inicio" class="menu-btn"><span>🏠</span></a>
+  <a href="#sobremi" class="menu-btn"><span>👤</span></a>
+  <a href="#lenguajes" class="menu-btn"><span>💻</span></a>
+  <a href="#herramientas" class="menu-btn"><span>⚙️</span></a>
+  <a href="#proyectos-mejorados" class="menu-btn"><span>🚀</span></a>
+  <a href="#experiencia" class="menu-btn"><span>💼</span></a>
+  <a href="#estudios" class="menu-btn"><span>🎓</span></a>
+  <a href="#certificaciones" class="menu-btn"><span>🧾</span></a>
+  <a href="#contacto" class="menu-btn"><span>📞</span></a>
+</div>
+
+<!-- Script -->
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    // Cambia el icono (☰ ↔ ✕)
+    if (!menu.classList.contains('hidden')) {
+      icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />';
+    } else {
+      icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
+    }
+  });
+
+  // Cerrar menú al hacer clic en un enlace
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
+    });
+  });
+</script>
+
   <!-- Inicio -->
 <section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center px-6" data-animate>
   <h2 class="text-4xl md:text-6xl font-bold mb-4 text-gray-900 relative overflow-hidden">
