@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adrián Caballero Camacho | Portafolio</title>
+  <title>Adrián Caballero Camacho | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -99,10 +99,59 @@
   </nav>
 
   <!-- Inicio -->
-  <section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center px-6" data-animate>
-    <h2 class="text-4xl md:text-6xl font-bold mb-4 text-gray-900">Adrián Caballero Camacho</h2>
-    <p class="text-lg md:text-xl text-gray-600">Ingeniero Informático • Desarrollador Full-Stack</p>
-  </section>
+<section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center px-6" data-animate>
+  <h2 class="text-4xl md:text-6xl font-bold mb-4 text-gray-900 relative overflow-hidden">
+    <span class="shine">Adrián Caballero Camacho</span>
+  </h2>
+  <p id="typing-text" class="text-lg md:text-xl text-gray-700 mb-6"></p>
+
+</section>
+
+<style>
+/* Fondo con degradado animado */
+#inicio {
+  background: linear-gradient(120deg, #f9f7f3, #ebe8e2, #f9f7f3);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Efecto shine en el nombre */
+.shine {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #1c3d5a, #3b82f6, #1c3d5a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: shineMove 4s linear infinite;
+}
+@keyframes shineMove {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+</style>
+
+<script>
+/* Efecto de texto typing */
+const text = "Ingeniero Informático • Desarrollador Full-Stack";
+const typing = document.getElementById("typing-text");
+let i = 0;
+function type() {
+  if (i < text.length) {
+    typing.textContent += text.charAt(i);
+    i++;
+    setTimeout(type, 60);
+  }
+}
+document.addEventListener("DOMContentLoaded", type);
+</script>
+
 
   <!-- Sobre mí -->
   <section id="sobremi" class="py-24 max-w-5xl mx-auto px-6" data-animate>
@@ -363,10 +412,10 @@
           <span class="text-white text-lg">🧾</span>
         </div>
         <div>
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">Certificados de asistencia – CibSE, ESI Ciudad Real</h4>
+          <h4 class="text-lg font-semibold text-[#1c3d5a]">Certificados de asistencia – CIBSE, ESI Ciudad Real</h4>
           <p class="text-sm text-gray-600 mb-2">Mayo 2025</p>
           <p class="text-gray-700 leading-relaxed">
-            Participación en los tutoriales organizados por la CibSE (Ibero-American Conference on Software Engineering):
+            Participación en los tutoriales organizados por la CIBSE (Chartered Institution of Building Services Engineers):
           </p>
           <ul class="list-disc ml-8 mt-2 text-gray-700 space-y-1">
             <li><span class="font-semibold text-[#1c3d5a]">Tutorial 1:</span> Agilidad con esteroides de Inteligencia Artificial</li>
