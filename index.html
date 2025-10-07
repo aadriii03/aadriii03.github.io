@@ -75,6 +75,7 @@
         transform: translateY(0);
       }
     }
+
     
   </style>
 </head>
@@ -87,7 +88,7 @@
       <ul class="hidden md:flex space-x-6 text-sm text-gray-700">
         <li><a href="#inicio" class="hover:text-[#1c3d5a] transition">Inicio</a></li>
         <li><a href="#sobremi" class="hover:text-[#1c3d5a] transition">Sobre mí</a></li>
-        <li><a href="#tecnologias" class="hover:text-[#1c3d5a] transition">Tecnologías</a></li>
+        <li><a href="#lenguajes" class="hover:text-[#1c3d5a] transition">Lenguajes</a></li>
         <li><a href="#proyectos-mejorados" class="hover:text-[#1c3d5a] transition">Proyectos</a></li>
         <li><a href="#experiencia" class="hover:text-[#1c3d5a] transition">Experiencia</a></li>
         <li><a href="#estudios" class="hover:text-[#1c3d5a] transition">Estudios</a></li>
@@ -114,10 +115,10 @@
     </p>
   </section>
 
-  <!-- Tecnologías -->
-  <section id="tecnologias" class="py-24 bg-[#f3f2ef]" data-animate>
+  <!-- Lenguajes -->
+  <section id="Lenguajes" class="py-24 bg-[#f3f2ef]" data-animate>
     <div class="max-w-5xl mx-auto px-6">
-      <h3 class="text-3xl font-semibold mb-10 text-[#1c3d5a] text-center">Tecnologías y herramientas</h3>
+      <h3 class="text-3xl font-semibold mb-10 text-[#1c3d5a] text-center">Lenguajes de programación</h3>
       <!-- Barras de progreso -->
       <div class="space-y-8">
         <!-- Python -->
@@ -153,6 +154,66 @@
       </div>
     </div>
   </section>
+
+  <!-- Herramientas y Entornos de Desarrollo -->
+<section id="herramientas" class="py-24 bg-[#f1eee8]" data-animate>
+  <div class="max-w-5xl mx-auto px-6">
+    <h3 class="text-3xl font-semibold mb-10 text-[#1c3d5a] text-center">Herramientas y entornos de desarrollo</h3>
+    
+    <div class="space-y-8">
+
+      <!-- Visual Studio Code -->
+      <div>
+        <div class="flex justify-between mb-2">
+          <span class="text-gray-800 font-medium">Visual Studio Code</span>
+          <span class="text-gray-700 font-semibold progress-text" data-value="90">0%</span>
+        </div>
+        <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner">
+          <div class="progress-bar h-5 rounded-full w-[0%]" data-value="90"
+               style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+        </div>
+      </div>
+
+      <!-- Android Studio -->
+      <div>
+        <div class="flex justify-between mb-2">
+          <span class="text-gray-800 font-medium">Android Studio</span>
+          <span class="text-gray-700 font-semibold progress-text" data-value="60">0%</span>
+        </div>
+        <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner">
+          <div class="progress-bar h-5 rounded-full w-[0%]" data-value="70"
+               style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+        </div>
+      </div>
+
+      <!-- IntelliJ IDEA -->
+      <div>
+        <div class="flex justify-between mb-2">
+          <span class="text-gray-800 font-medium">IDE Eclipse</span>
+          <span class="text-gray-700 font-semibold progress-text" data-value="70">0%</span>
+        </div>
+        <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner">
+          <div class="progress-bar h-5 rounded-full w-[0%]" data-value="60"
+               style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+        </div>
+      </div>
+
+            <!-- GitHub -->
+      <div>
+        <div class="flex justify-between mb-2">
+          <span class="text-gray-800 font-medium">GitHub</span>
+          <span class="text-gray-700 font-semibold progress-text" data-value="80">0%</span>
+        </div>
+        <div class="w-full bg-gray-200/60 rounded-full h-5 overflow-hidden shadow-inner">
+          <div class="progress-bar h-5 rounded-full w-[0%]" data-value="80"
+               style="background: linear-gradient(90deg, #1c3d5a, #3b82f6);"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
   <!-- Proyectos -->
   <section id="proyectos-mejorados" class="py-24 bg-[#ece9e4]" data-animate>
@@ -275,24 +336,50 @@
 </section>
 
 
+<!-- Certificaciones -->
+<section id="certificaciones" class="py-24 bg-[#f3f2ef]" data-animate>
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center">Certificaciones</h3>
 
-  <!-- Certificaciones -->
-  <section id="certificaciones" class="py-24 bg-[#f3f2ef]" data-animate>
-    <div class="max-w-5xl mx-auto px-6">
-      <h3 class="text-3xl font-semibold mb-10 text-[#1c3d5a] text-center">Certificaciones</h3>
-      <ul class="list-disc ml-6 text-gray-800 space-y-4 leading-relaxed">
-        <li><span class="font-medium text-lg">Inglés B1 – Trinity College London</span></li>
-        <li>
-          <span class="font-medium text-lg">Certificados de asistencia CIBSE – Mayo 2025, ESI Ciudad Real</span>
+    <div class="relative border-l-2 border-gray-300 ml-6" data-animate-timeline>
+
+      <!-- Certificación 1 -->
+      <div class="mb-10 ml-8">
+        <div class="absolute -left-[15px] bg-[#1c3d5a] w-8 h-8 flex items-center justify-center rounded-full shadow-md">
+          <span class="text-white text-lg">🎓</span>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-[#1c3d5a]">Inglés B1 – Trinity College London</h4>
+          <p class="text-sm text-gray-600 mb-2">2019</p>
+          <p class="text-gray-700 leading-relaxed">
+            Certificación oficial de nivel B1 en dominio del inglés, emitida por Trinity College London.
+          </p>
+        </div>
+      </div>
+
+      <!-- Certificación 2 -->
+      <div class="mb-10 ml-8">
+        <div class="absolute -left-[15px] bg-[#1c3d5a] w-8 h-8 flex items-center justify-center rounded-full shadow-md">
+          <span class="text-white text-lg">🧾</span>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-[#1c3d5a]">Certificados de asistencia – CIBSE, ESI Ciudad Real</h4>
+          <p class="text-sm text-gray-600 mb-2">Mayo 2025</p>
+          <p class="text-gray-700 leading-relaxed">
+            Participación en los tutoriales organizados por la CIBSE (Chartered Institution of Building Services Engineers):
+          </p>
           <ul class="list-disc ml-8 mt-2 text-gray-700 space-y-1">
             <li><span class="font-semibold text-[#1c3d5a]">Tutorial 1:</span> Agilidad con esteroides de Inteligencia Artificial</li>
             <li><span class="font-semibold text-[#1c3d5a]">Tutorial 2:</span> Fundamentos de Sostenibilidad Software</li>
             <li><span class="font-semibold text-[#1c3d5a]">Tutorial 3:</span> Software Engineering for ML Systems</li>
           </ul>
-        </li>
-      </ul>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Contacto -->
   <section id="contacto" class="py-24 bg-[#f1eee8]" data-animate>
