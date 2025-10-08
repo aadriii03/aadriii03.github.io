@@ -88,6 +88,12 @@
     #side-menu { display: none !important; }
     }
 
+    @keyframes shineMove {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+    }
+
+
 /* 🔹 Menú lateral completamente transparente */
 #side-menu {
   background: transparent !important;
@@ -318,6 +324,7 @@
     </svg>
   </a>
 
+
   <!-- Sobre mí -->
   <a href="#sobremi" class="menu-btn" title="Sobre mí">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#1c3d5a" stroke-width="1.8">
@@ -425,8 +432,14 @@
   <h2 class="text-4xl md:text-6xl font-bold mb-4 text-gray-900 relative overflow-hidden">
     <span class="shine">Adrián Caballero Camacho</span>
   </h2>
-  <p id="typing-text" class="text-lg md:text-xl text-gray-700 mb-6"></p>
 
+  <p id="typing-text" class="text-lg md:text-xl text-gray-700 mb-8">  </p>
+
+  <!-- 🔹 Botón Descargar CV -->
+  <a href="CV_Vitae_Adrian_Caballero.pdf" download
+    class="relative inline-block px-8 py-3 border border-[#1c3d5a] rounded-full text-[#1c3d5a] font-medium text-lg overflow-hidden group transition-all duration-500 ease-out">
+    <span class="shine-text">Descargar CV</span>
+  </a>
 </section>
 
 <style>
@@ -565,7 +578,6 @@ document.addEventListener("DOMContentLoaded", type);
       <div class="bg-white/85 rounded-2xl shadow-lg p-8 border-[1.5px] border-[#c8c8c8] hover:shadow-xl transition duration-300">
         <h4 class="text-2xl font-semibold text-[#1c3d5a] mb-8 text-center md:text-left relative">
           Lenguajes de programación
-          <span class="absolute bottom-[-8px] left-0 w-16 h-[3px] bg-[#1c3d5a] rounded-full"></span>
         </h4>
 
         <div class="space-y-8">
@@ -641,7 +653,6 @@ document.addEventListener("DOMContentLoaded", type);
       <div class="bg-[#f9f7f3]/95 rounded-2xl shadow-lg p-8 border-[1.5px] border-[#c0bbb5] hover:shadow-xl transition duration-300">
         <h4 class="text-2xl font-semibold text-[#1c3d5a] mb-8 text-center md:text-left relative">
           Herramientas y entornos de desarrollo
-          <span class="absolute bottom-[-8px] left-0 w-16 h-[3px] bg-[#1c3d5a] rounded-full"></span>
         </h4>
 
         <div class="space-y-8">
@@ -1018,6 +1029,28 @@ document.addEventListener("DOMContentLoaded", type);
 
     sections.forEach(section => observerMenu.observe(section));
   </script>
+
+  <script>
+  // 🔹 Ordenar bloques de progreso de mayor a menor según data-value
+  document.addEventListener("DOMContentLoaded", () => {
+    const containers = document.querySelectorAll("#conocimientos .space-y-8");
+
+    containers.forEach(container => {
+      const items = Array.from(container.children);
+
+      // Ordenar por valor numérico del atributo data-value
+      items.sort((a, b) => {
+        const valueA = parseInt(a.querySelector('.progress-bar').getAttribute('data-value'));
+        const valueB = parseInt(b.querySelector('.progress-bar').getAttribute('data-value'));
+        return valueB - valueA; // mayor a menor
+      });
+
+      // Reinsertar en orden
+      items.forEach(item => container.appendChild(item));
+    });
+  });
+  </script>
+
 
 
 </body>
