@@ -487,16 +487,44 @@ function type() {
 document.addEventListener("DOMContentLoaded", type);
 </script>
 
-  <!-- Sobre mí -->
-  <section id="sobremi" class="py-24 max-w-5xl mx-auto px-6" data-animate>
-    <h3 class="text-3xl font-semibold mb-6 text-[#1c3d5a]">Sobre mí</h3>
-    <p class="text-gray-700 leading-relaxed" id="sobremi-texto">
-      <span style="animation-delay: 0.2s;">Soy estudiante de Ingeniería Informática en la Escuela Superior de Informática de la UCLM, con especial interés en el diseño de aplicaciones y la gestión de proyectos.</span> 
-      <span style="animation-delay: 0.4s;">Me motiva crear soluciones tecnológicas que aporten valor real, tanto desde el punto de vista funcional como en la experiencia del usuario.</span> 
-      <span style="animation-delay: 0.6s;">Destaco por mi capacidad para trabajar en equipo, comunicar ideas con claridad y afrontar problemas con una mentalidad analítica y eficiente.</span> 
-      <span style="animation-delay: 0.8s;">Mi objetivo a corto plazo es seguir aprendiendo y aplicar mis conocimientos en entornos profesionales que valoren la innovación, la colaboración y el crecimiento continuo.</span>
-    </p>
-  </section>
+<!-- Sobre mí -->
+<section id="sobremi" class="py-24 max-w-6xl mx-auto px-6" data-animate>
+  <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center">Sobre mí</h3>
+
+  <!-- Contenedor con dos columnas -->
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Texto -->
+    <div>
+      <p class="text-gray-700 leading-relaxed" id="sobremi-texto">
+        <span style="animation-delay: 0.2s;">Soy estudiante de Ingeniería Informática en la Escuela Superior de Informática de la UCLM, con especial interés en el diseño de aplicaciones y la gestión de proyectos.</span> 
+        <span style="animation-delay: 0.4s;">Me motiva crear soluciones tecnológicas que aporten valor real, tanto desde el punto de vista funcional como en la experiencia del usuario.</span> 
+        <span style="animation-delay: 0.6s;">Destaco por mi capacidad para trabajar en equipo, comunicar ideas con claridad y afrontar problemas con una mentalidad analítica y eficiente.</span> 
+        <span style="animation-delay: 0.8s;">Mi objetivo a corto plazo es seguir aprendiendo y aplicar mis conocimientos en entornos profesionales que valoren la innovación, la colaboración y el crecimiento continuo.</span>
+      </p>
+    </div>
+
+    <!-- Imagen -->
+    <div class="flex justify-center">
+      <img src="foto_adrian_caballero.jpg" alt="Adrián Caballero Camacho" class="rounded-2xl shadow-lg w-72 h-72 object-cover border border-[#1c3d5a]/30 hover:scale-[1.03] transition-transform duration-300" />
+    </div>
+
+  </div>
+</section>
+
+<style>
+#sobremi img {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+#sobremi.visible img {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
 
   <!-- 🔹 Soft Skills -->
 <section id="softskills" class="py-24 bg-gradient-to-br from-[#f9f9f7] to-[#ebe8e3]" data-animate>
