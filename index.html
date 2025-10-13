@@ -94,174 +94,207 @@
     }
 
 
-/* 🔹 Menú lateral completamente transparente */
-#side-menu {
-  background: transparent !important;
-  backdrop-filter: none !important;
-  box-shadow: none !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 4px;
-  z-index: 100;
-}
+  /* 🔹 Menú lateral completamente transparente */
+  #side-menu {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 4px;
+    z-index: 100;
+  }
 
 
-/* Botones del menú */
-.menu-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background-color: rgba(28, 61, 90, 0.1);
-  border-radius: 50%;
-  font-size: 18px;
-  color: #1c3d5a;
-  transition: all 0.3s ease;
-  position: relative;
-}
+  /* Botones del menú */
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(28, 61, 90, 0.1);
+    border-radius: 50%;
+    font-size: 18px;
+    color: #1c3d5a;
+    transition: all 0.3s ease;
+    position: relative;
+  }
 
-/* Hover */
-.menu-btn:hover {
-  transform: scale(1.15);
-  background-color: #1c3d5a;
-  color: #fff;
-}
-
-/* Efecto visual al hacer clic */
-.menu-btn:active {
-  transform: scale(0.95);
-}
-
-/* Estado activo: la sección visible */
-.menu-btn.active {
-  background-color: #1c3d5a;
-  color: white;
-  box-shadow: 0 0 10px rgba(28, 61, 90, 0.4);
-}
-
+  /* Hover */
+  .menu-btn:hover {
+    transform: scale(1.15);
+    background-color: #1c3d5a;
+    color: #fff;
+  }
 
   /* Efecto visual al hacer clic */
   .menu-btn:active {
     transform: scale(0.95);
   }
 
-  /* 🔹 Estilos específicos para el menú móvil */
-#mobile-menu .mobile-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
+  /* Estado activo: la sección visible */
+  .menu-btn.active {
+    background-color: #1c3d5a;
+    color: white;
+    box-shadow: 0 0 10px rgba(28, 61, 90, 0.4);
+  }
 
-#mobile-menu .mobile-link:hover {
-  background-color: rgba(28, 61, 90, 0.1);
-  transform: translateY(-2px);
-}
 
-/* Fondo elegante general */
-#conocimientos {
-  background: linear-gradient(135deg, #f9f9f7, #ebe8e3);
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
-}
+    /* Efecto visual al hacer clic */
+    .menu-btn:active {
+      transform: scale(0.95);
+    }
 
-/* Mejora de contraste visual en bordes */
-#conocimientos .border-c8c8c8 {
-  border-color: #b7b7b7 !important;
-}
+    /* 🔹 Estilos específicos para el menú móvil */
+  #mobile-menu .mobile-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
 
-#conocimientos .border-c0bbb5 {
-  border-color: #a49f99 !important;
-}
+  #mobile-menu .mobile-link:hover {
+    background-color: rgba(28, 61, 90, 0.1);
+    transform: translateY(-2px);
+  }
 
-/* Hover y animación sutil en las barras */
-.progress-bar:hover {
-  filter: brightness(1.15);
-  transform: scale(1.03);
-  transition: all 0.3s ease;
-}
+  /* Fondo elegante general */
+  #conocimientos {
+    background: linear-gradient(135deg, #f9f9f7, #ebe8e3);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+  }
 
-#softskills {
-  background: linear-gradient(135deg, #f9f9f7, #ebe8e3);
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
-}
+  /* Mejora de contraste visual en bordes */
+  #conocimientos .border-c8c8c8 {
+    border-color: #b7b7b7 !important;
+  }
 
-#softskills .hover\:shadow-lg:hover {
-  box-shadow: 0 10px 25px rgba(28, 61, 90, 0.15);
-}
+  #conocimientos .border-c0bbb5 {
+    border-color: #a49f99 !important;
+  }
 
-#softskills svg {
-  transition: transform 0.3s ease, color 0.3s ease;
-}
+  /* Hover y animación sutil en las barras */
+  .progress-bar:hover {
+    filter: brightness(1.15);
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+  }
 
-#softskills div:hover svg {
-  transform: scale(1.1);
-  color: #3b82f6;
-}
+  #softskills {
+    background: linear-gradient(135deg, #f9f9f7, #ebe8e3);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+  }
 
-#softskills span {
-  letter-spacing: 0.3px;
-}
+  #softskills .hover\:shadow-lg:hover {
+    box-shadow: 0 10px 25px rgba(28, 61, 90, 0.15);
+  }
 
-/* --- Estilo general del menú lateral --- */
-#side-menu svg {
-  stroke: #1c3d5a;
-  transition: transform 0.3s ease, stroke 0.3s ease;
-}
+  #softskills svg {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
 
-/* Hover: icono se hace más grande y blanco */
-#side-menu .menu-btn:hover {
-  background-color: #1c3d5a;
-  color: white;
-}
+  #softskills div:hover svg {
+    transform: scale(1.1);
+    color: #3b82f6;
+  }
 
-#side-menu .menu-btn:hover svg {
-  stroke: white;
-  transform: scale(1.2);
-}
+  #softskills span {
+    letter-spacing: 0.3px;
+  }
 
-/* Estado activo: sección actual visible */
-#side-menu .menu-btn.active {
-  background-color: #1c3d5a;
-  color: white;
-  box-shadow: 0 0 10px rgba(28, 61, 90, 0.4);
-}
+  /* --- Estilo general del menú lateral --- */
+  #side-menu svg {
+    stroke: #1c3d5a;
+    transition: transform 0.3s ease, stroke 0.3s ease;
+  }
 
-#side-menu .menu-btn.active svg {
-  stroke: white;
-  transform: scale(1.2);
-}
+  /* Hover: icono se hace más grande y blanco */
+  #side-menu .menu-btn:hover {
+    background-color: #1c3d5a;
+    color: white;
+  }
 
-/* --- CORRECCIONES DEL MENÚ MÓVIL --- */
+  #side-menu .menu-btn:hover svg {
+    stroke: white;
+    transform: scale(1.2);
+  }
 
-/* Quita el fondo circular de los enlaces móviles */
-#mobile-menu .menu-btn {
-  background: none !important;
-  border-radius: 0 !important;
-  width: auto !important;
-  height: auto !important;
-  box-shadow: none !important;
-  justify-content: flex-start !important;
-  padding: 8px 0 !important;
-}
+  /* Estado activo: sección actual visible */
+  #side-menu .menu-btn.active {
+    background-color: #1c3d5a;
+    color: white;
+    box-shadow: 0 0 10px rgba(28, 61, 90, 0.4);
+  }
 
-/* Color de texto uniforme */
-#mobile-menu .menu-btn span {
-  color: #1c3d5a !important;
-  white-space: nowrap; /* fuerza que no se parta en dos líneas */
-}
+  #side-menu .menu-btn.active svg {
+    stroke: white;
+    transform: scale(1.2);
+  }
 
-/* Corrige hover */
-#mobile-menu .menu-btn:hover {
-  background: rgba(28, 61, 90, 0.05) !important;
-  color: #1c3d5a !important;
-  transform: none !important;
-}
+  /* --- CORRECCIONES DEL MENÚ MÓVIL --- */
 
+  /* Quita el fondo circular de los enlaces móviles */
+  #mobile-menu .menu-btn {
+    background: none !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    box-shadow: none !important;
+    justify-content: flex-start !important;
+    padding: 8px 0 !important;
+  }
+
+  /* Color de texto uniforme */
+  #mobile-menu .menu-btn span {
+    color: #1c3d5a !important;
+    white-space: nowrap; /* fuerza que no se parta en dos líneas */
+  }
+
+  /* Corrige hover */
+  #mobile-menu .menu-btn:hover {
+    background: rgba(28, 61, 90, 0.05) !important;
+    color: #1c3d5a !important;
+    transform: none !important;
+  }
+
+  /* 🔹 Aparición progresiva (de arriba a abajo) */
+  .fade-in-sequence {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .fade-in-sequence.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-in-sequence {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .fade-in-sequence.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-in-sequence {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .fade-in-sequence.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 
 
@@ -827,11 +860,14 @@ document.addEventListener("DOMContentLoaded", type);
           <span class="text-white text-lg">💻</span>
         </div>
         <div>
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">Diseñador Web – CFManá</h4>
-          <p class="text-sm text-gray-600 mb-2">Febrero 2023 – Mayo 2023</p>
-          <p class="text-gray-700 leading-relaxed">
-            Diseño e implementación de la página web para la academia CFManá, con foco en accesibilidad y mejora de la experiencia de usuario. Se uso como herramienta principal WIX, para que en un futuro se pueda actualizas
-            rapidamente por ellos. 
+            <div class="fade-in-sequence">
+              <h4 class="text-lg font-semibold text-[#1c3d5a]">Diseñador Web – CFManá</h4>
+              <p class="text-sm text-gray-600 mb-2">Febrero 2023 – Mayo 2023</p>
+              <p class="text-gray-700 leading-relaxed">
+                Diseño e implementación de la página web para la academia CFManá, con foco en accesibilidad y mejora de la experiencia de usuario. Se uso como herramienta principal WIX, para que en un futuro se pueda actualizas
+                rapidamente por ellos.
+              </p>
+            </div>
           </p>
         </div>
       </div>
@@ -842,6 +878,7 @@ document.addEventListener("DOMContentLoaded", type);
           <span class="text-white text-lg">💻</span>
         </div>
         <div>
+            <div class="fade-in-sequence">
           <h4 class="text-lg font-semibold text-[#1c3d5a]">Diseñador Web – Asociación Iker</h4>
           <p class="text-sm text-gray-600 mb-2">Septiembre 2025 – Actualidad</p>
           <p class="text-gray-700 leading-relaxed">
@@ -869,11 +906,13 @@ document.addEventListener("DOMContentLoaded", type);
           <span class="text-white text-lg">📘</span>
         </div>
         <div>
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">B1 Trinity College London</h4>
-          <p class="text-sm text-gray-600 mb-2">2019</p>
-          <p class="text-gray-700 leading-relaxed">
-            Certificación oficial de nivel B1 en el dominio del inglés.
-          </p>
+          <div class="fade-in-sequence">
+            <h4 class="text-lg font-semibold text-[#1c3d5a]">B1 Trinity College London</h4>
+            <p class="text-sm text-gray-600 mb-2">2019</p>
+            <p class="text-gray-700 leading-relaxed">
+              Certificación oficial de nivel B1 en el dominio del inglés.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -883,12 +922,14 @@ document.addEventListener("DOMContentLoaded", type);
           <span class="text-white text-lg">🌍</span>
         </div>
         <div>
+          <div class="fade-in-sequence">
           <h4 class="text-lg font-semibold text-[#1c3d5a]">Curso de Inmersión Lingüística Inglesa - Universidad Internacional Menéndez Pelayo (UIMP)</h4>
           <p class="text-sm text-gray-600 mb-2">2019</p>
           <p class="text-gray-700 leading-relaxed">  
             Curso intensivo de 40 horas enfocado en la competencia oral y la fluidez comunicativa, 
             con la participación de personas de habla inglesa procedentes de Reino Unido, Canadá, Estados Unidos e Irlanda.
           </p>
+          </div>
         </div>
       </div>
 
@@ -898,11 +939,13 @@ document.addEventListener("DOMContentLoaded", type);
           <span class="text-white text-lg">🎓</span>
         </div>
         <div>
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">Grado en Ingeniería Informática - Escuela Superior de Informática (Ciudad Real), Universidad de Castilla-La Mancha</h4>
-          <p class="text-sm text-gray-600 mb-2">2019 – Actualidad</p>
-          <p class="text-gray-700 leading-relaxed">
-            Especialización en tecnologías de la información (TI).
-          </p>
+          <div class="fade-in-sequence">
+            <h4 class="text-lg font-semibold text-[#1c3d5a]">Grado en Ingeniería Informática - Escuela Superior de Informática (Ciudad Real), Universidad de Castilla-La Mancha</h4>
+            <p class="text-sm text-gray-600 mb-2">2019 – Actualidad</p>
+            <p class="text-gray-700 leading-relaxed">
+              Especialización en tecnologías de la información (TI).
+            </p>
+          </div>
         </div>
       </div>
 
@@ -924,11 +967,13 @@ document.addEventListener("DOMContentLoaded", type);
           <span class="text-white text-lg">🎓</span>
         </div>
         <div>
+        <div class="fade-in-sequence">
           <h4 class="text-lg font-semibold text-[#1c3d5a]">Inglés B1 – Trinity College London</h4>
           <p class="text-sm text-gray-600 mb-2">2019</p>
           <p class="text-gray-700 leading-relaxed">
             Certificación oficial de nivel B1 en dominio del inglés, emitida por Trinity College London.
           </p>
+          </div>
         </div>
       </div>
 
@@ -938,6 +983,7 @@ document.addEventListener("DOMContentLoaded", type);
           <span class="text-white text-lg">🧾</span>
         </div>
         <div>
+          <div class="fade-in-sequence">
           <h4 class="text-lg font-semibold text-[#1c3d5a]">Certificados de asistencia – CIBSE, ESI Ciudad Real</h4>
           <p class="text-sm text-gray-600 mb-2">Mayo 2025</p>
           <p class="text-gray-700 leading-relaxed">
@@ -948,6 +994,7 @@ document.addEventListener("DOMContentLoaded", type);
             <li><span class="font-semibold text-[#1c3d5a]">Tutorial 2:</span> Fundamentos de Sostenibilidad Software</li>
             <li><span class="font-semibold text-[#1c3d5a]">Tutorial 3:</span> Software Engineering for ML Systems</li>
           </ul>
+          </div>
         </div>
       </div>
 
@@ -962,12 +1009,20 @@ document.addEventListener("DOMContentLoaded", type);
       <h3 class="text-3xl font-semibold mb-6 text-[#1c3d5a]">Contacto</h3>
       <p class="text-gray-600 mb-8">¿Quieres contactar conmigo? Escríbeme o visita mis redes.</p>
       <div class="space-x-8 flex justify-center items-center text-lg">
-        <a href="mailto:adriancaballero@example.com" class="text-[#1c3d5a] hover:underline flex items-center gap-2">📧 <span>Email</span></a>
-        <a href="https://github.com/aadriii03" target="_blank" class="text-[#1c3d5a] hover:underline flex items-center gap-2">💻 <span>GitHub</span></a>
-        <a href="https://www.linkedin.com/in/adrian-caballero-camacho-4703a529a/" target="_blank" class="text-[#1c3d5a] hover:underline flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="#1c3d5a" viewBox="0 0 24 24" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-.9 1.7-2.2 3.7-2.2 3.9 0 4.6 2.6 4.6 6V24h-4v-7.9c0-1.9 0-4.3-2.6-4.3s-3 2-3 4.1V24h-4V8z"/></svg>
-          <span>LinkedIn</span>
-        </a>
+        <a href="mailto:adriancaballerocamacho@gmail.com" class="fade-in-sequence text-[#1c3d5a] hover:underline flex items-center gap-2">📧 <span>Email</span></a>
+        <a href="https://github.com/aadriii03" target="_blank" class="fade-in-sequence text-[#1c3d5a] hover:underline flex items-center gap-2">💻 <span>GitHub</span></a>
+        <a href="https://www.linkedin.com/in/adrian-caballero-camacho-4703a529a/" 
+          target="_blank"
+          class="fade-in-sequence text-[#1c3d5a] hover:underline flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 24 24" 
+              fill="currentColor" 
+              class="w-5 h-5 text-[#1c3d5a]">
+            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-.9 1.7-2.2 3.7-2.2 3.9 0 4.6 2.6 4.6 6V24h-4v-7.9c0-1.9 0-4.3-2.6-4.3s-3 2-3 4.1V24h-4V8z"/>
+          </svg>
+  <span>LinkedIn</span>
+</a>
+
       </div>
     </div>
   </section>
@@ -1079,6 +1134,22 @@ document.addEventListener("DOMContentLoaded", type);
   });
   </script>
 
+  <script>
+    const fadeItems = document.querySelectorAll('.fade-in-sequence');
+    const fadeObserver = new IntersectionObserver(entries => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 200); // 200 ms entre cada bloque
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    fadeItems.forEach(item => fadeObserver.observe(item));
+  </script>
+
+  
 
 
 </body>
