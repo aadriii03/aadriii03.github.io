@@ -321,6 +321,32 @@
     border-color: black !important;
   }
 
+  /* --- Animación secuencial para proyectos --- */
+  .project-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    border: 1.5px solid transparent;
+  }
+
+  .project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .project-card.animating {
+    border-color: black !important;
+  }
+
+  .project-card h3 {
+    transition: color 0.6s ease;
+  }
+
+  .project-card.animating h3 {
+    color: black !important;
+  }
+
+
 
   </style>
 </head>
@@ -794,7 +820,7 @@ document.addEventListener("DOMContentLoaded", type);
 
 
 
-  <!-- 🔹 Proyectos -->
+<!-- 🔹 Proyectos -->
 <section id="proyectos-mejorados" class="py-24 bg-gradient-to-br from-[#f9f9f7] to-[#ebe8e3]" data-animate>
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center">
@@ -804,35 +830,36 @@ document.addEventListener("DOMContentLoaded", type);
     <!-- Grid de tarjetas -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-    <!-- Proyecto 1 -->
-    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300">
-      <img src="rushour.png" alt="Rush Hour" class="w-full h-48 object-cover">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold text-[#1c3d5a] mb-2">Rush Hour</h3>
-        <p class="text-gray-700 text-sm mb-4">
-          Juego lógico en Java basado en el clásico Rush Hour, con análisis de niveles y sistema de comandos CLI.
-        </p>
+      <!-- Proyecto 1 -->
+      <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300">
+        <img src="rushour.png" alt="Rush Hour" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[#1c3d5a] mb-2">Rush Hour</h3>
+          <p class="text-gray-700 text-sm mb-4">
+            Juego lógico en Java basado en el clásico Rush Hour, con análisis de niveles y sistema de comandos CLI.
+          </p>
 
-        <!-- Etiquetas -->
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-[#e8eef6] text-[#1c3d5a] text-xs font-medium px-3 py-1 rounded-full border border-[#1c3d5a]/20">
-            Java
-          </span>
-          <span class="bg-[#f4f2ee] text-[#3a3a3a] text-xs font-medium px-3 py-1 rounded-full border border-gray-300">
-            Eclipse
-          </span>
+          <!-- Etiquetas -->
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-[#e8eef6] text-[#1c3d5a] text-xs font-medium px-3 py-1 rounded-full border border-[#1c3d5a]/20">
+              Java
+            </span>
+            <span class="bg-[#f4f2ee] text-[#3a3a3a] text-xs font-medium px-3 py-1 rounded-full border border-gray-300">
+              Eclipse
+            </span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Proyecto 2 -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300">
+      <!-- Proyecto 2 -->
+      <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300">
         <img src="etfpro.png" alt="ETFPro" class="w-full h-48 object-cover">
         <div class="p-6">
           <h3 class="text-xl font-semibold text-[#1c3d5a] mb-2">ETFPro</h3>
           <p class="text-gray-700 text-sm mb-4">
             Aplicación web para analizar ETFs y gestionar carteras de inversión, integrando APIs financieras y dashboards interactivos.
           </p>
+
           <!-- Etiquetas -->
           <div class="flex flex-wrap gap-2">
             <span class="bg-[#e8eef6] text-[#1c3d5a] text-xs font-medium px-3 py-1 rounded-full border border-[#1c3d5a]/20">
@@ -846,13 +873,14 @@ document.addEventListener("DOMContentLoaded", type);
       </div>
 
       <!-- Proyecto 3 -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300">
+      <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300">
         <img src="optimagest.png" alt="OptimaGest" class="w-full h-48 object-cover">
         <div class="p-6">
           <h3 class="text-xl font-semibold text-[#1c3d5a] mb-2">OptimaGest</h3>
           <p class="text-gray-700 text-sm mb-4">
             Plataforma de auditoría interna para gestión de riesgos y controles IT basada en COBIT y procesos de negocio.
           </p>
+
           <!-- Etiquetas -->
           <div class="flex flex-wrap gap-2">
             <span class="bg-[#e8eef6] text-[#1c3d5a] text-xs font-medium px-3 py-1 rounded-full border border-[#1c3d5a]/20">
@@ -865,10 +893,10 @@ document.addEventListener("DOMContentLoaded", type);
         </div>
       </div>
 
-
     </div>
   </div>
 </section>
+
 
 
 <!-- Experiencia -->
@@ -1192,6 +1220,27 @@ document.addEventListener("DOMContentLoaded", type);
 
     softskills.forEach(card => softskillsObserver.observe(card));
   </script>
+
+  <script>
+    // Animación secuencial de los proyectos (borde + título)
+    const projects = document.querySelectorAll("#proyectos-mejorados .project-card");
+
+    const projectsObserver = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            const card = entry.target;
+            card.classList.add("visible", "animating");
+            setTimeout(() => card.classList.remove("animating"), 800);
+          }, i * 300); // 300 ms entre tarjetas
+          projectsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    projects.forEach(card => projectsObserver.observe(card));
+  </script>
+
 
 
 
