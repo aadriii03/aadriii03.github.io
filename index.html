@@ -296,7 +296,7 @@
     transform: translateY(0);
   }
 
-  /* --- Animación secuencial para Soft Skills --- */
+  /* --- Animación secuencial para Soft Skills (solo borde + icono) --- */
   .softskill-card {
     opacity: 0;
     transform: translateY(30px);
@@ -306,19 +306,19 @@
   .softskill-card.visible {
     opacity: 1;
     transform: translateY(0);
-    animation: colorFlash 1.2s ease-out;
   }
 
-  @keyframes colorFlash {
-    0% {
-      filter: brightness(0); /* negro al aparecer */
-    }
-    50% {
-      filter: brightness(0.2);
-    }
-    100% {
-      filter: brightness(1); /* color original */
-    }
+  .softskill-card svg,
+  .softskill-card {
+    transition: border-color 0.8s ease, color 0.8s ease;
+  }
+
+  .softskill-card.animating svg {
+    color: black !important;
+  }
+
+  .softskill-card.animating {
+    border-color: black !important;
   }
 
 
@@ -633,7 +633,7 @@ document.addEventListener("DOMContentLoaded", type);
       </div>
 
     <!-- 🎯 Orientación a objetivos -->
-    <div class="softskill-card flex flex-col items-center bg-[#f9f7f3]/95 rounded-2xl shadow-md border-[1.5px] border-[#bfbab5] w-32 h-32 hover:shadow-lg hover:scale-[1.05] transition-all duration-300">
+      <div class="softskill-card flex flex-col items-center bg-white/90 rounded-2xl shadow-md border-[1.5px] border-[#c8c8c8] w-32 h-32 hover:shadow-lg hover:scale-[1.05] transition-all duration-300">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mt-6 mb-2 text-[#1c3d5a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
         <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/>
         <circle cx="12" cy="12" r="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1174,19 +1174,21 @@ document.addEventListener("DOMContentLoaded", type);
   </script>
 
   <script>
-    // Animación secuencial de Soft Skills
+    // Animación secuencial de Soft Skills (solo borde + icono)
     const softskills = document.querySelectorAll("#softskills .softskill-card");
 
     const softskillsObserver = new IntersectionObserver(entries => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
-            entry.target.classList.add("visible");
-          }, i * 200); // intervalo de aparición (200ms entre cada una)
+            const card = entry.target;
+            card.classList.add("visible", "animating");
+            setTimeout(() => card.classList.remove("animating"), 800); // vuelve al color original
+          }, i * 250); // 250 ms entre tarjetas
           softskillsObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.3 });
 
     softskills.forEach(card => softskillsObserver.observe(card));
   </script>
