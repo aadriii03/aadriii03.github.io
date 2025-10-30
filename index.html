@@ -346,6 +346,18 @@
     color: black !important;
   }
 
+  .project-card {
+  border: 1.5px solid transparent;
+  transition: all 0.3s ease;
+  }
+
+.project-card:hover {
+  border-color: #000000; /* negro */
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+
 
 
   </style>
@@ -609,7 +621,7 @@ document.addEventListener("DOMContentLoaded", type);
 </style>
 
 
-  <!-- 🔹 Soft Skills -->
+  <!-- 🔹 ya jajajas -->
 <section id="softskills" class="py-24 bg-gradient-to-br from-[#f9f9f7] to-[#ebe8e3]" data-animate>
   <div class="max-w-6xl mx-auto px-6 text-center">
     <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a]">Soft Skills</h3>
@@ -625,22 +637,27 @@ document.addEventListener("DOMContentLoaded", type);
         <span class="text-[#1c3d5a] font-medium text-sm">Proactividad</span>
       </div>
 
-      <!-- 🤝 Trabajo en equipo -->
-      <div class="softskill-card flex flex-col items-center bg-white/90 rounded-2xl shadow-md border-[1.5px] border-[#c8c8c8] w-32 h-32 hover:shadow-lg hover:scale-[1.05] transition-all duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mt-6 mb-2 text-[#1c3d5a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4a4 4 0 110 8 4 4 0 010-8zm6 14v-2a4 4 0 00-4-4H10a4 4 0 00-4 4v2" />
-        </svg>
-        <span class="text-[#1c3d5a] font-medium text-sm leading-tight">Trabajo<br>en equipo</span>
-      </div>
-
+    <!-- 🤝 Trabajo en equipo -->
+    <div class="softskill-card flex flex-col items-center bg-white/90 rounded-2xl shadow-md border-[1.5px] border-[#c8c8c8] w-32 h-32 hover:shadow-lg hover:scale-[1.05] transition-all duration-300">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mt-6 mb-2 text-[#1c3d5a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="5" r="1.5" />
+        <circle cx="18" cy="15" r="1.5" />
+        <circle cx="6" cy="15" r="1.5" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v3m6 6l-2.6-2.6M6 15l2.6-2.6" />
+      </svg>
+      <span class="text-[#1c3d5a] font-medium text-sm leading-tight">Trabajo<br>en equipo</span>
+    </div>
 
       <!-- 🧠 Pensamiento analítico -->
       <div class="softskill-card flex flex-col items-center bg-white/90 rounded-2xl shadow-md border-[1.5px] border-[#c8c8c8] w-32 h-32 hover:shadow-lg hover:scale-[1.05] transition-all duration-300">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mt-6 mb-2 text-[#1c3d5a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 16v-2m8-6h2M4 12H2m15.364-7.364l1.414 1.414M7.05 16.95l-1.414 1.414M16.95 16.95l1.414-1.414M7.05 7.05L5.636 5.636" />
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M9 2a3 3 0 00-3 3v1a3 3 0 00-3 3v4a3 3 0 003 3v1a3 3 0 003 3m6-18a3 3 0 013 3v1a3 3 0 013 3v4a3 3 0 01-3 3v1a3 3 0 01-3 3" />
         </svg>
         <span class="text-[#1c3d5a] font-medium text-sm">Pensamiento analítico</span>
       </div>
+
 
       <!-- 💬 Comunicación -->
       <div class="softskill-card flex flex-col items-center bg-white/90 rounded-2xl shadow-md border-[1.5px] border-[#c8c8c8] w-32 h-32 hover:shadow-lg hover:scale-[1.05] transition-all duration-300">
@@ -650,23 +667,23 @@ document.addEventListener("DOMContentLoaded", type);
         <span class="text-[#1c3d5a] font-medium text-sm">Comunicación</span>
       </div>
 
-      <!-- 🌍 Adaptabilidad -->
+      <!-- 🌿 Adaptabilidad -->
       <div class="softskill-card flex flex-col items-center bg-white/90 rounded-2xl shadow-md border-[1.5px] border-[#c8c8c8] w-32 h-32 hover:shadow-lg hover:scale-[1.05] transition-all duration-300">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mt-6 mb-2 text-[#1c3d5a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-9-9 9 9 0 019 9zM9 12l3 3 5-5" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v2m0 16v2m10-10h-2M4 12H2m16.95 4.95l-1.414-1.414M7.05 7.05L5.636 5.636m12.728 0l-1.414 1.414M7.05 16.95l-1.414 1.414M12 8l3 4-3 4-3-4 3-4z" />
         </svg>
         <span class="text-[#1c3d5a] font-medium text-sm">Adaptabilidad</span>
       </div>
 
-    <!-- 🎯 Orientación a objetivos -->
-      <div class="softskill-card flex flex-col items-center bg-white/90 rounded-2xl shadow-md border-[1.5px] border-[#c8c8c8] w-32 h-32 hover:shadow-lg hover:scale-[1.05] transition-all duration-300">
+
+    <!-- 🎯 Orientado a objetivos -->
+    <div class="softskill-card flex flex-col items-center bg-white/90 rounded-2xl shadow-md border-[1.5px] border-[#c8c8c8] w-32 h-32 hover:shadow-lg hover:scale-[1.05] transition-all duration-300">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mt-6 mb-2 text-[#1c3d5a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-        <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="12" cy="12" r="5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 12l6-6m0 0h-4m4 0v4" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-9-9 9 9 0 019 9zM9 12l3 3 5-5" />
       </svg>
       <span class="text-[#1c3d5a] font-medium text-sm">Orientado a objetivos</span>
     </div>
+
 
 
     </div>
@@ -853,73 +870,99 @@ document.addEventListener("DOMContentLoaded", type);
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
       <!-- Proyecto 1 -->
-      <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300">
-        <img src="rushour.png" alt="Rush Hour" class="w-full h-48 object-cover">
+      <a href="https://github.com/aadriii03/Pokemon_IPO_II/tree/main" 
+        target="_blank" rel="noopener noreferrer"
+        class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300 block">
+        <img src="pokedex.jpg" alt="Pokédex" class="w-full h-48 object-cover">
         <div class="p-6">
-          <h3 class="text-xl font-semibold text-[#1c3d5a] mb-2">Rush Hour</h3>
+          <h3 class="text-xl font-semibold text-[#000000] mb-2">Pokédex</h3>
           <p class="text-gray-700 text-sm mb-4">
-            Juego lógico en Java basado en el clásico Rush Hour, con análisis de niveles y sistema de comandos CLI.
+            Aplicación de escritorio inspirada en Pokémon que permite gestionar y consultar 
+            una Pokédex con información de cada pokemon, visualizar los Pokémon propios y 
+            realizar combates, ya sea en modo individual contra la IA o en modo multujugador con dos jugadores.
           </p>
 
           <!-- Etiquetas -->
           <div class="flex flex-wrap gap-2">
-            <span class="bg-[#e8eef6] text-[#1c3d5a] text-xs font-medium px-3 py-1 rounded-full border border-[#1c3d5a]/20">
-              Java
+            <span class="bg-[#e8eef6] text-[#2e7d32] text-xs font-medium px-3 py-1 rounded-full border border-[#2e7d32]/20">
+              C#
             </span>
-            <span class="bg-[#f4f2ee] text-[#3a3a3a] text-xs font-medium px-3 py-1 rounded-full border border-gray-300">
-              Eclipse
+              <span class="bg-[#e8eef6] text-[#0078D7] text-xs font-medium px-3 py-1 rounded-full border border-[#0078D7]/20">
+              UWP
+            </span>
+            <span class="bg-[#ede6ff] text-[#5A0FC8] text-xs font-medium px-3 py-1 rounded-full border border-[#5A0FC8]/20">
+              Visual Studio 2022
+            </span>
+            <span class="bg-[#ede6ff] text-[#005A9E] text-xs font-medium px-3 py-1 rounded-full border border-[#005A9E]/20">
+              Blend for VS
             </span>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- Proyecto 2 -->
-      <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300">
-        <img src="etfpro.png" alt="ETFPro" class="w-full h-48 object-cover">
+      <a href="https://github.com/cxrbxyx/isi-ETFPro" target="_blank" rel="noopener noreferrer"
+        class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300 block">
+        <img src="etfpro1.png" alt="ETFPro" class="w-full h-48 object-cover">
         <div class="p-6">
-          <h3 class="text-xl font-semibold text-[#1c3d5a] mb-2">ETFPro</h3>
+          <h3 class="text-xl font-semibold text-[#000000] mb-2">ETFPro</h3>
           <p class="text-gray-700 text-sm mb-4">
             Aplicación web para analizar ETFs y gestionar carteras de inversión, integrando APIs financieras y dashboards interactivos.
           </p>
 
           <!-- Etiquetas -->
           <div class="flex flex-wrap gap-2">
-            <span class="bg-[#e8eef6] text-[#1c3d5a] text-xs font-medium px-3 py-1 rounded-full border border-[#1c3d5a]/20">
-              HTML, CSS, JavaScript
+            <span class="bg-[#e8eef6] text-[#E34F26] text-xs font-medium px-3 py-1 rounded-full border border-[#E34F26]/20">
+            HTML
             </span>
-            <span class="bg-[#f4f2ee] text-[#3a3a3a] text-xs font-medium px-3 py-1 rounded-full border border-gray-300">
-              VS Code
+            <span class="bg-[#e8eef6] text-[#5A0FC8] text-xs font-medium px-3 py-1 rounded-full border border-[#5A0FC8]/20">
+            CSS
+            </span>
+            <span class="bg-[#e8eef6] text-[#A67C00] text-xs font-medium px-3 py-1 rounded-full border border-[#A67C00]/20">
+            JavaScript
+            </span>
+            <span class="bg-[#e8eef6] text-[#0D63A5] text-xs font-medium px-3 py-1 rounded-full border border-[#0D63A5]/20">
+            DockerFile
+            </span>
+              <span class="bg-[#e8eef6] text-[#384d54] text-xs font-medium px-3 py-1 rounded-full border border-[#384d54]/20">
+            Python
+            </span>
+            <span class="bg-[#f4f2ee] text-[#005A9E] text-xs font-medium px-3 py-1 rounded-full border border-gray-300">
+            VS Code
             </span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <!-- Proyecto 3 -->
-      <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300">
-        <img src="optimagest.png" alt="OptimaGest" class="w-full h-48 object-cover">
+      <!-- Proyecto 3-->
+      <a href="https://github.com/Miriamltn/LAB_GSI" target="_blank" rel="noopener noreferrer"
+        class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300 block">
+        <img src="alzheimeratlas.png" alt="AlzheimerAtlas" class="w-full h-48 object-cover">
         <div class="p-6">
-          <h3 class="text-xl font-semibold text-[#1c3d5a] mb-2">OptimaGest</h3>
+          <h3 class="text-xl font-semibold text-[#000000] mb-2">AlzheimerAtlas</h3>
           <p class="text-gray-700 text-sm mb-4">
-            Plataforma de auditoría interna para gestión de riesgos y controles IT basada en COBIT y procesos de negocio.
+            Aplicación de escritorio diseñada para apoyar a pacientes con Alzheimer y sus familiares,
+            ofreciendo secciones de consejos, ejercicios, lectura, juegos y contenido educativo sobre la enfermedad.
           </p>
 
           <!-- Etiquetas -->
           <div class="flex flex-wrap gap-2">
-            <span class="bg-[#e8eef6] text-[#1c3d5a] text-xs font-medium px-3 py-1 rounded-full border border-[#1c3d5a]/20">
-              Python
+            <span class="bg-[#e6f5ea] text-[#2e7d32] text-xs font-medium px-3 py-1 rounded-full border border-[#2e7d32]/20">
+              C#
             </span>
-            <span class="bg-[#f4f2ee] text-[#3a3a3a] text-xs font-medium px-3 py-1 rounded-full border border-gray-300">
-              PyCharm
+            <span class="bg-[#E9EEF5] text-[#007ACC] text-xs font-medium px-3 py-1 rounded-full border border-[#007ACC]/20">
+              XAML
+            </span>
+            <span class="bg-[#e8eef6] text-[#5A0FC8] text-xs font-medium px-3 py-1 rounded-full border border-[#5A0FC8]/20">
+              Visual Studio 2022
             </span>
           </div>
         </div>
-      </div>
+      </a>
 
     </div>
   </div>
 </section>
-
-
 
 <!-- Experiencia -->
 <section id="experiencia" class="py-24 bg-[#f9f7f3]" data-animate>
