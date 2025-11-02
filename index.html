@@ -357,6 +357,51 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
 
+  #inicio {
+    background: linear-gradient(120deg, #f9f7f3, #ebe8e2, #f9f7f3);
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
+    position: relative;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .focus-overlay {
+    background: rgba(255, 255, 255, 0.35); /* más claro */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
+    z-index: 1;
+    pointer-events: none; /* no bloquea clicks ni foco */
+  }
+
+
+  /* ✨ Texto brillante */
+  .shine {
+    background: linear-gradient(90deg, #1c3d5a, #3b82f6, #1c3d5a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: shineMove 4s linear infinite;
+  }
+  @keyframes shineMove {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  #typing-text {
+    color: #051f35 !important;              /* más oscuro */
+    position: relative;
+    z-index: 10;                             /* por encima de la capa */
+    text-shadow: 0 1px 2px rgba(255,255,255,.9), 
+                0 2px 10px rgba(0,0,0,.12); /* legibilidad sobre blur */
+  }
+
 
 
 
@@ -524,20 +569,72 @@
 
   <!-- Inicio -->
 <section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center px-6" data-animate>
+  <div class="focus-overlay absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-3xl h-48 md:h-56 rounded-3xl z-0"></div>
+  <div id="particles-js" class="absolute inset-0 -z-10"></div>
+
   <h2 class="text-4xl md:text-6xl font-bold mb-4 text-gray-900 relative overflow-hidden">
     <span class="shine">Adrián Caballero Camacho</span>
   </h2>
 
   <p id="typing-text" class="text-lg md:text-xl text-gray-700 mb-8">  </p>
 
+  <!-- Fondo animado de partículas -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 70 },
+
+      color: {
+        value: ["#d4a5a5", "#a45c6b", "#73293d"]
+      },
+
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.3 },
+      "size": { "value": 3 },
+      
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#5c1e2b",
+        "opacity": 0.40,
+        "width": 1
+      },
+
+      "move": {
+        "enable": true,
+        "speed": 2,
+        "direction": "none",
+        "out_mode": "out"
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "grab" },
+        "onclick": { "enable": false }
+      },
+
+      "modes": {
+        "grab": { "distance": 130, "line_linked": { "opacity": 0.5 } }
+      }
+    },
+
+    "retina_detect": true
+  });
+  </script>
+
+
   <!-- 🔹 Botón Descargar CV -->
   <a href="CV_Vitae_Adrian_Caballero.pdf" download
     class="relative inline-block px-8 py-3 border border-[#1c3d5a] rounded-full text-[#1c3d5a] font-medium text-lg overflow-hidden group transition-all duration-500 ease-out">
     <span class="shine-text">Descargar CV</span>
   </a>
+  
 </section>
 
 <style>
+  
 /* Fondo con degradado animado */
 #inicio {
   background: linear-gradient(120deg, #f9f7f3, #ebe8e2, #f9f7f3);
@@ -568,6 +665,7 @@
 </style>
 
 <script>
+
 /* Efecto de texto typing */
 const text = "Ingeniero Informático • Desarrollador Full-Stack";
 const typing = document.getElementById("typing-text");
