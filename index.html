@@ -209,13 +209,13 @@
 
   /* --- Estilo general del menú lateral --- */
   #side-menu svg {
-    stroke: #1c3d5a;
+    stroke: #011c40;
     transition: transform 0.3s ease, stroke 0.3s ease;
   }
 
   /* Hover: icono se hace más grande y blanco */
   #side-menu .menu-btn:hover {
-    background-color: #1c3d5a;
+    background-color: #1a293f;
     color: white;
   }
 
@@ -226,9 +226,9 @@
 
   /* Estado activo: sección actual visible */
   #side-menu .menu-btn.active {
-    background-color: #1c3d5a;
+    background-color: #023859;
     color: white;
-    box-shadow: 0 0 10px rgba(28, 61, 90, 0.4);
+    box-shadow: 0 0 10px #011c40;
   }
 
   #side-menu .menu-btn.active svg {
@@ -404,10 +404,10 @@
 
   <!-- 🔹 MENÚ RESPONSIVE -->
 <header class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-md shadow-sm z-50 flex justify-between items-center px-6 py-3 md:hidden">
-  <h1 class="text-lg font-semibold text-[#1c3d5a]">Adrián Caballero</h1>
+  <h1 class="text-lg font-semibold text-[#102134]">Adrián Caballero</h1>
 
   <!-- Botón hamburguesa -->
-  <button id="menu-toggle" class="text-[#1c3d5a] focus:outline-none">
+  <button id="menu-toggle" class="text-[#102134] focus:outline-none">
     <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
         stroke-width="2" stroke="currentColor" class="w-7 h-7">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -417,7 +417,8 @@
 
 <!-- 🔹 MENÚ DESPLEGABLE MÓVIL -->
 <nav id="mobile-menu"
-    class="hidden fixed top-[60px] left-0 w-full bg-white/95 backdrop-blur-md shadow-md flex flex-col items-center space-y-4 py-6 text-[#1c3d5a] font-medium z-40 md:hidden">
+    class="hidden fixed top-[60px] left-0 w-full bg-white/95 backdrop-blur-md shadow-md flex 
+    flex-col items-center space-y-4 py-6 text-[#1a293f] font-medium z-40 md:hidden">
   <a href="#inicio" class="menu-btn flex items-center gap-2"><span>Inicio</span></a>
   <a href="#sobremi" class="menu-btn flex items-center gap-2"><span>Sobre mí</span></a>
   <a href="#conocimientos" class="menu-btn flex items-center gap-2"><span>Conocimientos</span></a>
@@ -512,9 +513,7 @@
     </svg>
   </a>
 
-
 </div>
-
 
 
 <!-- Script -->
@@ -561,7 +560,7 @@
         <p id="typing-text" class="text-lg md:text-xl text-gray-700 mb-8"></p>
 
         <a href="CV_Vitae_Adrian_Caballero.pdf" download
-          class="relative inline-block px-8 py-3 border border-[#1c3d5a] rounded-full text-[#1c3d5a] font-medium text-lg overflow-hidden group transition-all duration-500 ease-out">
+          class="relative inline-block px-8 py-3 border border-[#011C40] rounded-full text-[#011C40] font-medium text-lg overflow-hidden group transition-all duration-500 ease-out">
           <span class="shine-text">Descargar CV</span>
         </a>
       </div>
@@ -576,11 +575,11 @@
     particlesJS("particles-js", {
       particles: {
         number: { value: 70 },
-        color: { value: ["#d4a5a5", "#a45c6b", "#73293d"] },
+        color: { value: ["#75020f", "#51080d", "#2b0307"] },
         shape: { type: "circle" },
         opacity: { value: 0.3 },
         size: { value: 3 },
-        line_linked: { enable: true, distance: 150, color: "#5c1e2b", opacity: 0.40, width: 1 },
+        line_linked: { enable: true, distance: 150, color: "#51080d", opacity: 0.40, width: 1 },
         move: { enable: true, speed: 2, direction: "none", out_mode: "out" }
       },
       interactivity: {
@@ -656,7 +655,7 @@
 
 /* Texto subtítulo visible encima del vidrio */
 #typing-text {
-  color: #051f35;
+  color: #011c40;
   text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 2px 10px rgba(0,0,0,0.15);
   z-index: 30;
   position: relative;
@@ -718,7 +717,7 @@ document.addEventListener("DOMContentLoaded", type);
 </style>
 
 
-  <!-- 🔹 ya jajajas -->
+  <!-- Soft Skills -->
 <section id="softskills" class="py-24 bg-gradient-to-br from-[#f9f9f7] to-[#ebe8e3]" data-animate>
   <div class="max-w-6xl mx-auto px-6 text-center">
     <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a]">Soft Skills</h3>
@@ -957,7 +956,7 @@ document.addEventListener("DOMContentLoaded", type);
 
 
 <!-- 🔹 Proyectos -->
-<section id="proyectos-mejorados" class="py-24 bg-gradient-to-br from-[#f9f9f7] to-[#ebe8e3]" data-animate>
+<section id="proyectos" class="py-24 bg-gradient-to-br from-[#f9f9f7] to-[#ebe8e3]" data-animate>
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center">
       Proyectos
@@ -972,7 +971,7 @@ document.addEventListener("DOMContentLoaded", type);
         class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300 block">
         <img src="pokedex.jpg" alt="Pokédex" class="w-full h-48 object-cover">
         <div class="p-6">
-          <h3 class="text-xl font-semibold text-[#000000] mb-2">Pokédex</h3>
+          <h3 class="text-xl font-semibold text-[#011c40] mb-2">Pokédex</h3>
           <p class="text-gray-700 text-sm mb-4">
             Aplicación de escritorio inspirada en Pokémon que permite gestionar y consultar 
             una Pokédex con información de cada pokemon, visualizar los Pokémon propios y 
@@ -1002,7 +1001,7 @@ document.addEventListener("DOMContentLoaded", type);
         class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300 block">
         <img src="etfpro1.png" alt="ETFPro" class="w-full h-48 object-cover">
         <div class="p-6">
-          <h3 class="text-xl font-semibold text-[#000000] mb-2">ETFPro</h3>
+          <h3 class="text-xl font-semibold text-[#011c40] mb-2">ETFPro</h3>
           <p class="text-gray-700 text-sm mb-4">
             Aplicación web para analizar ETFs y gestionar carteras de inversión, integrando APIs financieras y dashboards interactivos.
           </p>
@@ -1036,7 +1035,7 @@ document.addEventListener("DOMContentLoaded", type);
         class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300 block">
         <img src="alzheimeratlas.png" alt="AlzheimerAtlas" class="w-full h-48 object-cover">
         <div class="p-6">
-          <h3 class="text-xl font-semibold text-[#000000] mb-2">AlzheimerAtlas</h3>
+          <h3 class="text-xl font-semibold text-[#011c40] mb-2">AlzheimerAtlas</h3>
           <p class="text-gray-700 text-sm mb-4">
             Aplicación de escritorio diseñada para apoyar a pacientes con Alzheimer y sus familiares,
             ofreciendo secciones de consejos, ejercicios, lectura, juegos y contenido educativo sobre la enfermedad.
@@ -1075,7 +1074,7 @@ document.addEventListener("DOMContentLoaded", type);
         </div>
         <div>
             <div class="fade-in-sequence">
-              <h4 class="text-lg font-semibold text-[#1c3d5a]">Diseñador Web – CFManá</h4>
+              <h4 class="text-lg font-semibold text-[#102134]">Diseñador Web – CFManá</h4>
               <p class="text-sm text-gray-600 mb-2">Febrero 2023 – Mayo 2023</p>
               <p class="text-gray-700 leading-relaxed">
                 Diseño e implementación de la página web para la academia CFManá, con foco en accesibilidad y mejora de la experiencia de usuario. Se uso como herramienta principal WIX, para que en un futuro se pueda actualizas
@@ -1093,7 +1092,7 @@ document.addEventListener("DOMContentLoaded", type);
         </div>
         <div>
             <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">Diseñador Web – Asociación Iker</h4>
+          <h4 class="text-lg font-semibold text-[#102134]">Diseñador Web – Asociación Iker</h4>
           <p class="text-sm text-gray-600 mb-2">Septiembre 2025 – Actualidad</p>
           <p class="text-gray-700 leading-relaxed">
             Desarrollo del nuevo sitio web de la asociación, centrado en la captación de voluntariado y la comunicación de eventos. Se ha utilizado WordPress para facilitar la gestión de contenidos por parte del equipo de la asociación.  
@@ -1121,7 +1120,7 @@ document.addEventListener("DOMContentLoaded", type);
         </div>
         <div>
           <div class="fade-in-sequence">
-            <h4 class="text-lg font-semibold text-[#1c3d5a]">B1 Trinity College London</h4>
+            <h4 class="text-lg font-semibold text-[#102134]">B1 Trinity College London</h4>
             <p class="text-sm text-gray-600 mb-2">2019</p>
             <p class="text-gray-700 leading-relaxed">
               Certificación oficial de nivel B1 en el dominio del inglés.
@@ -1137,7 +1136,7 @@ document.addEventListener("DOMContentLoaded", type);
         </div>
         <div>
           <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">Curso de Inmersión Lingüística Inglesa - Universidad Internacional Menéndez Pelayo (UIMP)</h4>
+          <h4 class="text-lg font-semibold text-[#102134]">Curso de Inmersión Lingüística Inglesa - Universidad Internacional Menéndez Pelayo (UIMP)</h4>
           <p class="text-sm text-gray-600 mb-2">2019</p>
           <p class="text-gray-700 leading-relaxed">  
             Curso intensivo de 40 horas enfocado en la competencia oral y la fluidez comunicativa, 
@@ -1154,7 +1153,7 @@ document.addEventListener("DOMContentLoaded", type);
         </div>
         <div>
           <div class="fade-in-sequence">
-            <h4 class="text-lg font-semibold text-[#1c3d5a]">Grado en Ingeniería Informática - Escuela Superior de Informática (Ciudad Real), Universidad de Castilla-La Mancha</h4>
+            <h4 class="text-lg font-semibold text-[#102134]">Grado en Ingeniería Informática - Escuela Superior de Informática (Ciudad Real), Universidad de Castilla-La Mancha</h4>
             <p class="text-sm text-gray-600 mb-2">2019 – Actualidad</p>
             <p class="text-gray-700 leading-relaxed">
               Especialización en tecnologías de la información (TI).
@@ -1182,7 +1181,7 @@ document.addEventListener("DOMContentLoaded", type);
         </div>
         <div>
         <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">Fundamentos de Marketing Digital</h4>
+          <h4 class="text-lg font-semibold text-[#102134]">Fundamentos de Marketing Digital</h4>
           <p class="text-sm text-gray-600 mb-2">25/04/2020</p>
           <p class="text-gray-700 leading-relaxed">
             Certificación de cursos de google junto con IAB de Europa y The Open University
@@ -1199,7 +1198,7 @@ document.addEventListener("DOMContentLoaded", type);
         </div>
         <div>
         <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">Fundamentos de Desarrollo de Apps Móviles</h4>
+          <h4 class="text-lg font-semibold text-[#102134]">Fundamentos de Desarrollo de Apps Móviles</h4>
           <p class="text-sm text-gray-600 mb-2">27/04/2020</p>
           <p class="text-gray-700 leading-relaxed">
             Certificación de cursos de google junto con la Universidad Complutense de Madrid en Fundamentos de Desarrollo de Apps Móviles con una duración de 40 horas.
@@ -1215,7 +1214,7 @@ document.addEventListener("DOMContentLoaded", type);
         </div>
         <div>
         <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">Inmersion Lingüística Inglesa</h4>
+          <h4 class="text-lg font-semibold text-[#102134]">Inmersion Lingüística Inglesa</h4>
           <p class="text-sm text-gray-600 mb-2">15/08/2022 - 19/08/2022</p>
           <p class="text-gray-700 leading-relaxed">
             Durante el verano de 2022, fui beneficiario de una beca otorgada por la Universidad Internacional Menéndez Pelayo (UIMP)
@@ -1233,7 +1232,7 @@ document.addEventListener("DOMContentLoaded", type);
         </div>
         <div>
         <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">Inglés B1 – Trinity College London</h4>
+          <h4 class="text-lg font-semibold text-[#102134]">Inglés B1 – Trinity College London</h4>
           <p class="text-sm text-gray-600 mb-2">octubre 2019</p>
           <p class="text-gray-700 leading-relaxed">
             Certificación oficial de nivel B1 en dominio del inglés, emitida por Trinity College London.
@@ -1249,15 +1248,15 @@ document.addEventListener("DOMContentLoaded", type);
         </div>
         <div>
           <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#1c3d5a]">Certificados de asistencia – CIBSE, ESI Ciudad Real</h4>
+          <h4 class="text-lg font-semibold text-[#102134]">Certificados de asistencia – CIBSE, ESI Ciudad Real</h4>
           <p class="text-sm text-gray-600 mb-2">Mayo 2025</p>
           <p class="text-gray-700 leading-relaxed">
             Participación en los tutoriales organizados por la CIBSE (Chartered Institution of Building Services Engineers):
           </p>
           <ul class="list-disc ml-8 mt-2 text-gray-700 space-y-1">
-            <li><span class="font-semibold text-[#1c3d5a]">Tutorial 1:</span> Agilidad con esteroides de Inteligencia Artificial</li>
-            <li><span class="font-semibold text-[#1c3d5a]">Tutorial 2:</span> Fundamentos de Sostenibilidad Software</li>
-            <li><span class="font-semibold text-[#1c3d5a]">Tutorial 3:</span> Software Engineering for ML Systems</li>
+            <li><span class="font-semibold text-[#1a293f]">Tutorial 1:</span> Agilidad con esteroides de Inteligencia Artificial</li>
+            <li><span class="font-semibold text-[#1a293f]">Tutorial 2:</span> Fundamentos de Sostenibilidad Software</li>
+            <li><span class="font-semibold text-[#1a293f]">Tutorial 3:</span> Software Engineering for ML Systems</li>
           </ul>
           </div>
         </div>
@@ -1272,17 +1271,17 @@ document.addEventListener("DOMContentLoaded", type);
   <section id="contacto" class="py-24 bg-[#f1eee8]" data-animate>
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h3 class="text-3xl font-semibold mb-6 text-[#1c3d5a]">Contacto</h3>
-      <p class="text-gray-600 mb-8">¿Quieres contactar conmigo? Escríbeme o visita mis redes.</p>
+      <p class="text-[#404751]">¿Quieres contactar conmigo? Escríbeme o visita mis redes.</p>
       <div class="space-x-8 flex justify-center items-center text-lg">
-        <a href="mailto:adriancaballerocamacho@gmail.com" class="fade-in-sequence text-[#1c3d5a] hover:underline flex items-center gap-2">📧 <span>Email</span></a>
-        <a href="https://github.com/aadriii03" target="_blank" class="fade-in-sequence text-[#1c3d5a] hover:underline flex items-center gap-2">💻 <span>GitHub</span></a>
+        <a href="mailto:adriancaballerocamacho@gmail.com" class="fade-in-sequence text-[#102134] hover:underline flex items-center gap-2">📧 <span>Email</span></a>
+        <a href="https://github.com/aadriii03" target="_blank" class="fade-in-sequence text-[#102134] hover:underline flex items-center gap-2">🧑‍💻 <span>GitHub</span></a>
         <a href="https://www.linkedin.com/in/adrian-caballero-camacho-4703a529a/" 
           target="_blank"
-          class="fade-in-sequence text-[#1c3d5a] hover:underline flex items-center gap-2">
+          class="fade-in-sequence text-[#102134] hover:underline flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 24 24" 
               fill="currentColor" 
-              class="w-5 h-5 text-[#1c3d5a]">
+              class="w-5 h-5 text-[#102134]">
             <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-.9 1.7-2.2 3.7-2.2 3.9 0 4.6 2.6 4.6 6V24h-4v-7.9c0-1.9 0-4.3-2.6-4.3s-3 2-3 4.1V24h-4V8z"/>
           </svg>
   <span>LinkedIn</span>
