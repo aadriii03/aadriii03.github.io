@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adrián Caballero Camacho | Portfolio</title>
@@ -383,7 +384,20 @@
 
   </style>
 </head>
-<body>
+
+<body class="loading">
+
+<!-- LOADER INICIAL -->
+<div id="loader-overlay">
+  <div class="loader-content">
+    <div id="loader-text"></div>
+
+    <div class="loader-bar">
+      <div id="loader-bar-fill"></div>
+    </div>
+  </div>
+</div>
+<!-- FIN LOADER INICIAL -->
 
   <!-- Navbar 
   <nav class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-md shadow-sm z-50">
@@ -661,22 +675,6 @@
   position: relative;
 }
 </style>
-
-<script>
-
-/* Efecto de texto typing */
-const text = "Ingeniero Informático • Tecnologías de la Informacion";
-const typing = document.getElementById("typing-text");
-let i = 0;
-function type() {
-  if (i < text.length) {
-    typing.textContent += text.charAt(i);
-    i++;
-    setTimeout(type, 60);
-  }
-}
-document.addEventListener("DOMContentLoaded", type);
-</script>
 
 <!-- Sobre mí -->
 <section id="sobremi" class="py-24 max-w-6xl mx-auto px-6" data-animate>
@@ -1503,8 +1501,220 @@ document.addEventListener("DOMContentLoaded", type);
     projects.forEach(card => projectsObserver.observe(card));
   </script>
 
-
-
-
 </body>
+
+<head>
+  <style>
+  /* LOADER INICIAL */
+  body.loading {
+    overflow: hidden; /* evita scroll mientras carga */
+  }
+
+  #loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* por encima de todo */
+    color: #ffffff;
+  }
+
+  .loader-content {
+    text-align: center;
+  }
+
+  /* Texto "Bienvenido" */
+  #loader-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(20px); /* empieza un poco más abajo */
+    animation: loaderTextUp 0.8s ease-out forwards;
+    animation-delay: 0.2s; /* empieza a subir un pelín después */
+  }
+
+  /* Animación de subida sutil */
+  @keyframes loaderTextUp {
+    to {
+      opacity: 1;
+      transform: translateY(-5px); /* acaba ligeramente por encima */
+    }
+  }
+
+  /* Barra de carga */
+  .loader-bar {
+    width: 260px;
+    max-width: 70vw;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 28px auto 0 auto;
+  }
+
+  #loader-bar-fill {
+    height: 100%;
+    width: 0;
+    background: #ffffff;
+    border-radius: 999px;
+    transition: width 1.5s ease-out; /* dura aprox. 3s */
+  }
+
+  /* LOADER INICIAL */
+body.loading {
+  overflow: hidden;
+}
+
+  #loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .loader-content {
+    text-align: center;
+  }
+
+  #loader-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #ffffff;
+    opacity: 0;
+    transform: translateY(25px);
+    animation: floatIn 1.2s ease-out forwards;
+  }
+
+  /* Efecto de subida suave */
+  @keyframes floatIn {
+    0% { opacity: 0; transform: translateY(25px); }
+    100% { opacity: 1; transform: translateY(-5px); }
+  }
+
+  /* Glow al aparecer cada letra */
+  .letter-glow {
+    animation: glow 0.4s ease-out forwards;
+  }
+
+  @keyframes glow {
+    0% { opacity: 0; filter: blur(6px); }
+    100% { opacity: 1; filter: blur(0); }
+  }
+
+  /* Rebote pequeño al finalizar */
+  #loader-text.bounce {
+    animation: bounce 0.6s ease-out;
+  }
+
+  @keyframes bounce {
+    0% { transform: translateY(-5px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(-5px); }
+  }
+
+  .loader-bar {
+    width: 260px;
+    max-width: 70vw;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 28px auto 0 auto;
+  }
+
+  #loader-bar-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #ffffff, #bbbbbb, #ffffff);
+    background-size: 200%;
+    animation: barGlow 1.5s linear infinite;
+    border-radius: 999px;
+    transition: width 3s cubic-bezier(0.25, 1, 0.3, 1);
+  }
+
+  @keyframes barGlow {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+  }
+
+  </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // 📌 ELEMENTOS DEL LOADER
+  const overlay      = document.getElementById("loader-overlay");
+  const barFill      = document.getElementById("loader-bar-fill");
+  const loaderTextEl = document.getElementById("loader-text");
+  const loaderText   = "Bienvenido";
+
+  // 📌 ELEMENTOS DEL HERO (INICIO)
+  const heroText   = "Ingeniero Informático • Desarrollador Full-Stack";
+  const typingEl   = document.getElementById("typing-text");
+  let heroIndex    = 0;
+
+  // 🔤 TYPING DEL HERO (INICIO)
+  function typeHero() {
+    if (!typingEl) return;              // por si acaso
+    if (heroIndex < heroText.length) {
+      typingEl.textContent += heroText.charAt(heroIndex);
+      heroIndex++;
+      setTimeout(typeHero, 55);
+    }
+  }
+
+  // 🔤 TYPING DEL "Bienvenido" LETRA A LETRA
+  let i = 0;
+  function typeLoader() {
+    if (!loaderTextEl) return;
+    if (i < loaderText.length) {
+      const span = document.createElement("span");
+      span.textContent = loaderText.charAt(i);
+      span.classList.add("letter-glow");
+      loaderTextEl.appendChild(span);
+      i++;
+      setTimeout(typeLoader, 70);
+    }
+  }
+
+  // ▶️ ARRANCAMOS EL LOADER
+  typeLoader();
+
+  // Barra de carga sube
+  if (barFill) {
+    setTimeout(() => {
+      barFill.style.width = "100%";
+    }, 300);
+  }
+
+  // ⏱ CUANDO ACABA EL LOADER → DESVANECER + EMPEZAR HERO TYPING
+  setTimeout(() => {
+    if (overlay) {
+      overlay.style.transition = "opacity 0.7s ease";
+      overlay.style.opacity = "0";
+
+      setTimeout(() => {
+        overlay.style.display = "none";
+        // 🔥 AQUÍ EMPIEZA EL TYPING DEL INICIO
+        typeHero();
+      }, 700); // después del fade-out
+    } else {
+      // Si por lo que sea no hay overlay, empezamos igual el typing
+      typeHero();
+    }
+  }, 3000); // duración total del loader (3s aprox)
+});
+</script>
+
+
+</head>
+
 </html>
