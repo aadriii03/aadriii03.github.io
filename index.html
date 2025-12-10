@@ -1073,6 +1073,41 @@
         </div>
       </a>
 
+      <!-- Proyecto: Asociación Iker -->
+      <a href="https://asociacioniker.org" target="_blank" rel="noopener noreferrer"
+        class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 transition transform duration-300 block">
+
+        <img src="imagenes/logoIker.png" alt="Asociación Iker - Desarrollo Web" class="w-full h-48 object-cover">
+
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[#011c40] mb-2">Asociación Iker – Desarrollo Web</h3>
+
+          <p class="text-gray-700 text-sm mb-4">
+            Diseño y desarrollo de una página web para la Asociación Iker, creada para mejorar la visibilidad de la entidad,
+            facilitar la captación de socios y promover las donaciones.  
+            La plataforma está orientada tanto a personas afectadas por la enfermedad como a potenciales colaboradores,
+            ofreciendo una buena experiencia de usuario.
+          </p>
+
+          <!-- Etiquetas -->
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-[#e6f5ea] text-[#2e7d32] text-xs font-medium px-3 py-1 rounded-full border border-[#2e7d32]/20">
+              WordPress + WooCommerce
+            </span>
+
+            <span class="bg-[#F5E9EA] text-[#A00000] text-xs font-medium px-3 py-1 rounded-full border border-[#A00000]/20">
+              SEO + AEO
+            </span>
+
+            <span class="bg-[#e8eef6] text-[#5A0FC8] text-xs font-medium px-3 py-1 rounded-full border border-[#5A0FC8]/20">
+              Servidor local XAMPP
+            </span>
+          </div>
+        </div>
+      </a>
+
+
+
     </div>
   </div>
 </section>
@@ -1093,7 +1128,7 @@
           <div class="fade-in-sequence">
             <h4 class="text-lg font-semibold text-[#102134]">Diseñador Web – CFManá</h4>
             <p class="text-sm text-gray-600 mb-2">Febrero 2023 – Mayo 2023</p>
-           <span class="inline-block bg-[#e6f5ea] text-[#2e7d32] px-3 py-1 text-xs rounded-full border border-[#8a5600]/30 mb-2">
+          <span class="inline-block bg-[#e6f5ea] text-[#2e7d32] px-3 py-1 text-xs rounded-full border border-[#8a5600]/30 mb-2">
             Trabajo
           </span>
             <p class="text-gray-700 leading-relaxed">
@@ -1132,9 +1167,9 @@
         <div class="fade-in-sequence">
           <h4 class="text-lg font-semibold text-[#102134]">Primer Premio – III Edición Digital Builders</h4>
           <p class="text-sm text-gray-600 mb-2">NTT DATA Europe &amp; Latam · Noviembre 2025</p>
-           <!-- Etiquetas -->
+          <!-- Etiquetas -->
           <span class="inline-block bg-[#ffe9c2] text-[#8a5600] px-3 py-1 text-xs rounded-full border border-[#8a5600]/30 mb-2">
-             Concurso / Premio
+        Concurso / Premio
           </span>
           <p class="text-gray-700 leading-relaxed">
             Reconocimiento otorgado por NTT DATA Europe &amp; Latam y la Escuela Superior de Informática por el desarrollo 
@@ -1669,20 +1704,16 @@ body.loading {
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // 📌 ELEMENTOS DEL LOADER
   const overlay      = document.getElementById("loader-overlay");
   const barFill      = document.getElementById("loader-bar-fill");
   const loaderTextEl = document.getElementById("loader-text");
   const loaderText   = "Bienvenido";
-
-  // 📌 ELEMENTOS DEL HERO (INICIO)
   const heroText   = "Ingeniero Informático • Desarrollador Full-Stack";
   const typingEl   = document.getElementById("typing-text");
   let heroIndex    = 0;
 
-  // 🔤 TYPING DEL HERO (INICIO)
   function typeHero() {
-    if (!typingEl) return;              // por si acaso
+    if (!typingEl) return;
     if (heroIndex < heroText.length) {
       typingEl.textContent += heroText.charAt(heroIndex);
       heroIndex++;
@@ -1690,7 +1721,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 🔤 TYPING DEL "Bienvenido" LETRA A LETRA
   let i = 0;
   function typeLoader() {
     if (!loaderTextEl) return;
@@ -1704,17 +1734,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ▶️ ARRANCAMOS EL LOADER
   typeLoader();
 
-  // Barra de carga sube
   if (barFill) {
     setTimeout(() => {
       barFill.style.width = "100%";
     }, 300);
   }
 
-  // ⏱ CUANDO ACABA EL LOADER → DESVANECER + EMPEZAR HERO TYPING
   setTimeout(() => {
     if (overlay) {
       overlay.style.transition = "opacity 0.7s ease";
@@ -1722,14 +1749,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(() => {
         overlay.style.display = "none";
-        // 🔥 AQUÍ EMPIEZA EL TYPING DEL INICIO
         typeHero();
-      }, 700); // después del fade-out
+      }, 700);
     } else {
-      // Si por lo que sea no hay overlay, empezamos igual el typing
       typeHero();
     }
-  }, 3000); // duración total del loader (3s aprox)
+  }, 3000);
 });
 </script>
 
