@@ -11,14 +11,42 @@ document.addEventListener("DOMContentLoaded", () => {
   let i = 0;
   let heroIndex = 0;
 
-  function typeLoader() {
-    if (i < loaderText.length && loaderTextEl) {
-      const span = document.createElement("span");
-      span.textContent = loaderText.charAt(i);
-      span.classList.add("letter-glow");
-      loaderTextEl.appendChild(span);
-      i++;
-      setTimeout(typeLoader, 70);
+  // ⏱️ CONTROL DE LOADER: Solo muestra el "Bienvenido" si han pasado más de 2 horas
+  const lastVisit = localStorage.getItem('lastVisit');
+  const currentTime = Date.now();
+  const twoHours = 2 * 60 * 60 * 1000; // 2 horas en milisegundos
+  
+  const shouldShowLoader = !lastVisit || (currentTime - parseInt(lastVisit)) > twoHours;
+
+  if (!shouldShowLoader) {
+    // ⚡ Saltar loader - visita reciente
+    if (overlay) {
+      overlay.style.display = "none";
+    }
+    document.body.classList.remove("loading");
+    typeHero();
+  } else {
+    // 🎬 Mostrar loader - primera visita o más de 2 horas
+    localStorage.setItem('lastVisit', currentTime.toString());
+    
+    // Mostrar loader normal
+    function typeLoader() {
+      if (i < loaderText.length && loaderTextEl) {
+        const span = document.createElement("span");
+        span.textContent = loaderText.charAt(i);
+        span.classList.add("letter-glow");
+        loaderTextEl.appendChild(span);
+        i++;
+        setTimeout(typeLoader, 70);
+      }
+    }
+
+    typeLoader();
+
+    if (barFill) {
+      setTimeout(() => {
+        barFill.style.width = "100%";
+      }, 300);
     }
   }
 
@@ -28,14 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
       heroIndex++;
       setTimeout(typeHero, 55);
     }
-  }
-
-  typeLoader();
-
-  if (barFill) {
-    setTimeout(() => {
-      barFill.style.width = "100%";
-    }, 300);
   }
 
   
@@ -587,13 +607,19 @@ const projectsObserver = new IntersectionObserver(entries => {
 
 projects.forEach(card => projectsObserver.observe(card));
 
+  // Para mostrar o no el texto de bienvenido si han pasado menos de 2 horas
+
+
+  
   setTimeout(() => {
-    if (overlay) {
+    if (overlay && shouldShowLoader) {
       overlay.style.opacity = "0";
       setTimeout(() => {
         overlay.style.display = "none";
         typeHero();
       }, 700);
+    } else if (!shouldShowLoader) {
+      // Ya se ejecutó typeHero antes
     } else {
       typeHero();
     }
