@@ -681,3 +681,41 @@ transition: width 3s cubic-bezier(0.25, 1, 0.3, 1);
   transform: translateY(-6px) scale(1.08);
   box-shadow: 0 12px 28px rgba(28, 61, 90, 0.18);
 }
+
+/* Links del drawer móvil */
+#mobile-menu .mobile-item{
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(16,33,52,0.10);
+  background: rgba(255,255,255,0.65);
+  transition: background .2s ease, transform .2s ease;
+}
+#mobile-menu .mobile-item:hover{
+  background: rgba(16,33,52,0.06);
+  transform: translateX(2px);
+}
+
+/* ✅ Tema oscuro básico (sin romper tu paleta) */
+html.dark body{
+  background-color: #0b1220;
+  color: rgba(255,255,255,0.85);
+}
+
+html.dark #mobile-menu{
+  background: rgba(15, 23, 42, 0.92);
+}
+html.dark #mobile-menu .mobile-item{
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.10);
+}
+html.dark #mobile-menu .mobile-item span{
+  color: rgba(255,255,255,0.9);
+}
+
+body.menu-open .fab {
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.4;
+}

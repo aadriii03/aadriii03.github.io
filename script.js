@@ -39,26 +39,59 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   
-// Menú móvil toggle
-const toggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('mobile-menu');
-const icon = document.getElementById('menu-icon');
+// MENÚ MÓVIL DESPLEGABLE
+// Drawer móvil izquierdo + backdrop
+const toggle = document.getElementById("menu-toggle-mobile");
+const menu = document.getElementById("mobile-menu");
+const backdrop = document.getElementById("mobile-backdrop");
+const closeBtn = document.getElementById("menu-close");
+const iconMobile = document.getElementById("menu-icon-mobile");
+
+const hamburgerPath = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
+const xPath = '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />';
+
+function openMenu() {
+  if (!menu || !backdrop) return;
+  backdrop.classList.remove("hidden");
+  menu.classList.remove("-translate-x-full");
+  document.body.classList.add("overflow-hidden");
+  if (iconMobile) iconMobile.innerHTML = xPath;
+}
+
+function closeMenu() {
+  if (!menu || !backdrop) return;
+  menu.classList.add("-translate-x-full");
+  backdrop.classList.add("hidden");
+  document.body.classList.remove("overflow-hidden");
+  if (iconMobile) iconMobile.innerHTML = hamburgerPath;
+}
+
+function isOpen() {
+  return menu && !menu.classList.contains("-translate-x-full");
+}
 
 toggle.addEventListener('click', () => {
-  menu.classList.toggle('hidden');
-  if (!menu.classList.contains('hidden')) {
-    icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />';
+  if (isOpen()) {
+    closeMenu();
   } else {
-    icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
+    openMenu();
   }
 });
 
+closeBtn?.addEventListener("click", closeMenu);
+backdrop?.addEventListener("click", closeMenu);
+
 document.querySelectorAll('#mobile-menu a').forEach(link => {
   link.addEventListener('click', () => {
-    menu.classList.add('hidden');
-    icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
+    closeMenu();
   });
 });
+
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && isOpen()) closeMenu();
+});
+
 
 // Particles.js
 particlesJS("particles-js", {
@@ -391,12 +424,17 @@ function changeLanguage(lang) {
 }
 
 const langToggle = document.getElementById('lang-toggle-desktop');
+const langToggleMobile = document.getElementById('lang-toggle-mobile');
 
 if (langToggle) {
   langToggle.addEventListener('click', () => {
     const newLang = currentLang === 'es' ? 'en' : 'es';
     changeLanguage(newLang);
     langToggle.querySelector('span').textContent = newLang.toUpperCase();
+    // Actualizar también el botón móvil si existe
+    if (langToggleMobile) {
+      langToggleMobile.querySelector('#lang-label-mobile').textContent = newLang.toUpperCase();
+    }
   });
   
   // Cargar idioma guardado
@@ -404,7 +442,23 @@ if (langToggle) {
   if (savedLang && savedLang !== 'es') {
     changeLanguage(savedLang);
     langToggle.querySelector('span').textContent = savedLang.toUpperCase();
+    if (langToggleMobile) {
+      langToggleMobile.querySelector('#lang-label-mobile').textContent = savedLang.toUpperCase();
+    }
   }
+}
+
+// Event listener para el botón de idioma móvil
+if (langToggleMobile) {
+  langToggleMobile.addEventListener('click', () => {
+    const newLang = currentLang === 'es' ? 'en' : 'es';
+    changeLanguage(newLang);
+    langToggleMobile.querySelector('#lang-label-mobile').textContent = newLang.toUpperCase();
+    // Actualizar también el botón de escritorio si existe
+    if (langToggle) {
+      langToggle.querySelector('span').textContent = newLang.toUpperCase();
+    }
+  });
 }
 
 // Animación general al hacer scroll

@@ -37,32 +37,64 @@
   </div>
 </div>
 
-  <!-- 🔹 MENÚ RESPONSIVE -->
-<header class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-md shadow-sm z-50 flex justify-between items-center px-6 py-3 md:hidden">
-  <h1 class="text-lg font-semibold text-[#102134]">Adrián Caballero</h1>
-
-  <!-- Botón hamburguesa -->
-  <button id="menu-toggle" class="text-[#102134] focus:outline-none">
-    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-        stroke-width="2" stroke="currentColor" class="w-7 h-7">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  </button>
-</header>
-
 <!-- 🔹 MENÚ DESPLEGABLE MÓVIL -->
+<!-- ✅ Botón hamburguesa (solo móvil) -->
+<button id="menu-toggle-mobile"
+  class="md:hidden fixed top-5 left-5 z-[80] w-12 h-12 rounded-full bg-white/90 backdrop-blur-md
+        border border-black/10 shadow-lg flex items-center justify-center
+        active:scale-95 transition">
+  <svg id="menu-icon-mobile" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+      class="w-6 h-6 text-[#102134]">
+    <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
+
+<!-- ✅ Backdrop -->
+<div id="mobile-backdrop"
+  class="hidden md:hidden fixed inset-0 z-[70] bg-black/35 backdrop-blur-[2px]"></div>
+
+<!-- ✅ Drawer lateral IZQUIERDO -->
 <nav id="mobile-menu"
-    class="hidden fixed top-[60px] left-0 w-full bg-white/95 backdrop-blur-md shadow-md flex 
-    flex-col items-center space-y-4 py-6 text-[#1a293f] font-medium z-40 md:hidden">
-  <a href="#inicio" class="menu-btn flex items-center gap-2"><span data-i18n="menu.inicio">Inicio</span></a>
-  <a href="#sobremi" class="menu-btn flex items-center gap-2"><span data-i18n="menu.sobremi">Sobre mí</span></a>
-  <a href="#tecnologias" class="menu-btn flex items-center gap-2"><span data-i18n="menu.tecnologias">Tecnologías</span></a>
-  <a href="#softskills" class="menu-btn flex items-center gap-2"><span data-i18n="menu.softskills">Soft Skills</span></a>
-  <a href="#proyectos" class="menu-btn flex items-center gap-2"><span data-i18n="menu.proyectos">Proyectos</span></a>
-  <a href="#experiencia" class="menu-btn flex items-center gap-2"><span data-i18n="menu.experiencia">Experiencia</span></a>
-  <a href="#estudios" class="menu-btn flex items-center gap-2"><span data-i18n="menu.estudios">Estudios</span></a>
-  <a href="#certificaciones" class="menu-btn flex items-center gap-2"><span data-i18n="menu.certificaciones">Certificaciones</span></a>
-  <a href="#contacto" class="menu-btn flex items-center gap-2"><span data-i18n="menu.contacto">Contacto</span></a>
+  class="md:hidden fixed top-0 left-0 z-[75]
+        h-full w-[82vw] max-w-[320px]
+        bg-white/95 backdrop-blur-md shadow-2xl
+        -translate-x-full transition-transform duration-300 ease-out
+        pt-20 px-6 pb-6 overflow-y-auto">
+
+  <div class="absolute top-5 right-5">
+    <button id="menu-close"
+      class="w-10 h-10 rounded-full hover:bg-black/5 transition flex items-center justify-center"
+      aria-label="Cerrar menú">
+      ✕
+    </button>
+  </div>
+
+  <div class="flex flex-col gap-4 text-[#1a293f] font-medium">
+    <a href="#inicio" class="mobile-item"><span data-i18n="menu.inicio">Inicio</span></a>
+    <a href="#sobremi" class="mobile-item"><span data-i18n="menu.sobremi">Sobre mí</span></a>
+    <a href="#tecnologias" class="mobile-item"><span data-i18n="menu.tecnologias">Tecnologías</span></a>
+    <a href="#softskills" class="mobile-item"><span data-i18n="menu.softskills">Soft Skills</span></a>
+    <a href="#proyectos" class="mobile-item"><span data-i18n="menu.proyectos">Proyectos</span></a>
+    <a href="#experiencia" class="mobile-item"><span data-i18n="menu.experiencia">Experiencia</span></a>
+    <a href="#estudios" class="mobile-item"><span data-i18n="menu.estudios">Estudios</span></a>
+    <a href="#certificaciones" class="mobile-item"><span data-i18n="menu.certificaciones">Certificaciones</span></a>
+    <a href="#contacto" class="mobile-item"><span data-i18n="menu.contacto">Contacto</span></a>
+    
+    <!-- Divisor -->
+    <div class="w-full h-[1px] bg-black/10 my-2"></div>
+    
+    <!-- Botones de tema e idioma -->
+    <button id="theme-toggle-mobile" class="mobile-item justify-between" aria-label="Cambiar tema">
+      <span data-i18n="menu.tema">Tema</span>
+      <span id="theme-icon" class="text-lg">☀️</span>
+    </button>
+    <button id="lang-toggle-mobile" class="mobile-item justify-between" aria-label="Cambiar idioma">
+      <span data-i18n="menu.idioma">Idioma</span>
+      <span class="text-xs font-bold text-[#102134]" id="lang-label-mobile">ES</span>
+    </button>
+  </div>
 </nav>
 
 
