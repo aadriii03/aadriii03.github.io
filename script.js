@@ -610,6 +610,7 @@ projects.forEach(card => projectsObserver.observe(card));
   // Para mostrar o no el texto de bienvenido si han pasado menos de 2 horas
 
 
+
   
   setTimeout(() => {
     if (overlay && shouldShowLoader) {
