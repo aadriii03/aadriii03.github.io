@@ -6,12 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const typingEl = document.getElementById("typing-text");
 
   const loaderText = "Bienvenido";
-  const heroText = "Ingeniero Informático • Desarrollador Full-Stack";
+  let heroText = "Ingeniero Informático • Especializado en Tecnologías de la Información";
 
   let i = 0;
   let heroIndex = 0;
+  let typingTimeout = null;
 
-  // ⏱️ CONTROL DE LOADER: Solo muestra el "Bienvenido" si han pasado más de 2 horas
+  // CONTROL DE LOADER: Solo muestra el "Bienvenido" si han pasado más de 2 horas
   const lastVisit = localStorage.getItem('lastVisit');
   const currentTime = Date.now();
   const twoHours = 2 * 60 * 60 * 1000; // 2 horas en milisegundos
@@ -54,9 +55,30 @@ document.addEventListener("DOMContentLoaded", () => {
     if (heroIndex < heroText.length && typingEl) {
       typingEl.textContent += heroText.charAt(heroIndex);
       heroIndex++;
-      setTimeout(typeHero, 55);
+      typingTimeout = setTimeout(typeHero, 55);
     }
   }
+
+  function stopTyping() {
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
+      typingTimeout = null;
+    }
+  }
+
+  function restartTyping(newText) {
+    stopTyping();
+    heroText = newText;
+    heroIndex = 0;
+    if (typingEl) {
+      typingEl.textContent = '';
+      typeHero();
+    }
+  }
+
+  // Exponer las funciones para uso global
+  window.stopHeroTyping = stopTyping;
+  window.restartHeroTyping = restartTyping;
 
   
 // MENÚ MÓVIL DESPLEGABLE
@@ -149,7 +171,7 @@ let currentLang = 'es';
 const translations = {
   es: {
     loaderText: "Bienvenido",
-    heroText: "Ingeniero Informático • Desarrollador Full-Stack",
+    heroText: "Ingeniero Informático • Especializado en Tecnologías de la Información",
     menu: {
       inicio: "Inicio",
       sobremi: "Sobre mí",
@@ -277,7 +299,7 @@ const translations = {
   },
   en: {
     loaderText: "Welcome",
-    heroText: "Computer Engineer • Full-Stack Developer",
+    heroText: "Computer Engineer • Specialized in Information Technologies",
     menu: {
       inicio: "Home",
       sobremi: "About Me",
@@ -433,10 +455,14 @@ function changeLanguage(lang) {
     }
   });
   
-  // Actualizar el texto del hero (typing text)
-  const typingEl = document.getElementById('typing-text');
-  if (typingEl) {
-    typingEl.textContent = translations[lang].heroText;
+  // Actualizar el texto del hero (typing text) con animación
+  if (window.restartHeroTyping) {
+    window.restartHeroTyping(translations[lang].heroText);
+  } else {
+    const typingEl = document.getElementById('typing-text');
+    if (typingEl) {
+      typingEl.textContent = translations[lang].heroText;
+    }
   }
   
   // Guardar preferencia
