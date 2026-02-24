@@ -123,13 +123,6 @@ toggle.addEventListener('click', () => {
 closeBtn?.addEventListener("click", closeMenu);
 backdrop?.addEventListener("click", closeMenu);
 
-document.querySelectorAll('#mobile-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    closeMenu();
-  });
-});
-
-
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && isOpen()) closeMenu();
 });
@@ -673,3 +666,59 @@ const techObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 
 techCards.forEach(card => techObserver.observe(card));
+
+// Control de navegación suave para el menú lateral (pantallas grandes)
+document.querySelectorAll('#side-menu a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    const targetId = link.getAttribute('href');
+    
+    // Si es el enlace de inicio, hacer scroll al top de la página
+    if (targetId === '#inicio') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      // Para otras secciones, hacer scroll normal
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  });
+});
+
+// Control de navegación suave para el menú móvil
+document.querySelectorAll('#mobile-menu a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    const targetId = link.getAttribute('href');
+    
+    // Cerrar el menú móvil primero
+    closeMenu();
+    
+    // Pequeño delay para que se complete la animación de cierre
+    setTimeout(() => {
+      if (targetId === '#inicio') {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      } else {
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    }, 100);
+  });
+});
