@@ -112,6 +112,9 @@ function isOpen() {
   return menu && !menu.classList.contains("-translate-x-full");
 }
 
+// Exponer closeMenu globalmente para que los enlaces del menú puedan acceder
+window.closeMenu = closeMenu;
+
 toggle.addEventListener('click', () => {
   if (isOpen()) {
     closeMenu();
