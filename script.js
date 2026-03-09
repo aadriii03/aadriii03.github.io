@@ -670,6 +670,36 @@ const techObserver = new IntersectionObserver(entries => {
 
 techCards.forEach(card => techObserver.observe(card));
 
+// Animación progresiva de la línea vertical del timeline con scroll
+const timelines = document.querySelectorAll('[data-animate-timeline]');
+if (timelines.length > 0) {
+  function updateTimelineProgress() {
+    timelines.forEach(timeline => {
+      const rect = timeline.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const timelineHeight = timeline.offsetHeight;
+      
+      // Calcular cuánto de la sección es visible
+      const visibleTop = Math.max(0, windowHeight - rect.top);
+      const visibleBottom = Math.min(timelineHeight, windowHeight - rect.top);
+      
+      // Calcular el porcentaje de progreso
+      let progress = 0;
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        progress = (visibleTop / (timelineHeight + windowHeight)) * 100;
+        progress = Math.min(100, Math.max(0, progress * 1.5)); // Ajustar velocidad
+      }
+      
+      timeline.style.setProperty('--line-height', `${progress}%`);
+    });
+  }
+  
+  // Actualizar en scroll
+  window.addEventListener('scroll', updateTimelineProgress, { passive: true });
+  // Actualizar al cargar
+  updateTimelineProgress();
+}
+
 // Control de navegación suave para el menú lateral (pantallas grandes)
 document.querySelectorAll('#side-menu a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {

@@ -48,6 +48,33 @@ h1, h2, h3, h4 {
   }
 }
 
+/* Certificación dot style */
+.cert-dot {
+  width: 10px;
+  height: 10px;
+  background: #1c3d5a;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Animación progresiva de línea vertical con scroll */
+[data-animate-timeline] {
+  position: relative;
+}
+
+[data-animate-timeline]::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 2px;
+  height: var(--line-height, 0%);
+  background: linear-gradient(to bottom, #3a5c7d, #5a8fc4);
+  transition: height 0.1s ease-out;
+  z-index: 0;
+}
+
 /* Hover en proyectos */
 .project-card {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
