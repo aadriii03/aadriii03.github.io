@@ -134,19 +134,19 @@ document.addEventListener("keydown", (e) => {
 // Particles.js
 particlesJS("particles-js", {
   particles: {
-    number: { value: 70 },
-    color: { value: ["#75020f", "#51080d", "#2b0307"] },
+    number: { value: 45 },
+    color: { value: ["#4d9fff", "#2dd4bf", "#5c6bc0"] },
     shape: { type: "circle" },
-    opacity: { value: 0.3 },
-    size: { value: 3 },
+    opacity: { value: 0.25 },
+    size: { value: 2 },
     line_linked: {
       enable: true,
-      distance: 150,
-      color: "#2b0307",
-      opacity: 0.4,
+      distance: 140,
+      color: "#4d9fff",
+      opacity: 0.12,
       width: 1
     },
-    move: { enable: true, speed: 2 }
+    move: { enable: true, speed: 1.2 }
   },
   interactivity: {
     detect_on: "canvas",
@@ -168,6 +168,7 @@ const translations = {
   es: {
     loaderText: "Bienvenido",
     heroText: "Ingeniero Informático • Especializado en Tecnologías de la Información",
+    a11y: { skip: "Saltar al contenido" },
     menu: {
       inicio: "Inicio",
       sobremi: "Sobre mí",
@@ -177,12 +178,29 @@ const translations = {
       experiencia: "Experiencia",
       estudios: "Estudios",
       certificaciones: "Certificaciones",
-      contacto: "Contacto"
+      contacto: "Contacto",
+      idioma: "Idioma"
     },
     hero: {
-      downloadCV: "Descargar CV"
+      badge: "Ingeniero Informático · UCLM",
+      downloadCV: "Descargar CV",
+      ctaProjects: "Ver proyectos",
+      ctaContact: "Contacto"
+    },
+    highlights: {
+      degree: "Grado en Ingeniería Informática",
+      award: "Premio Digital Builders · NTT DATA",
+      iker: "Desarrollo para Asociación Iker"
     },
     section: {
+      eyebrow: "Perfil",
+      eyebrowSkills: "Competencias",
+      eyebrowStack: "Stack",
+      eyebrowWork: "Trabajo",
+      eyebrowCareer: "Trayectoria",
+      eyebrowEducation: "Formación",
+      eyebrowCerts: "Acreditaciones",
+      eyebrowContact: "Hablemos",
       sobremi: "Sobre mí",
       softskills: "Soft Skills",
       tecnologias: "Tecnologías y Herramientas",
@@ -213,6 +231,7 @@ const translations = {
       gestion: "Gestión y organización"
     },
     proyectos: {
+      featured: "Destacado",
       pokedex: {
         desc: "Aplicación de escritorio inspirada en Pokémon que permite gestionar y consultar una Pokédex con información de cada pokemon, visualizar los Pokémon propios y realizar combates, ya sea en modo individual contra la IA o en modo multujugador con dos jugadores."
       },
@@ -284,18 +303,26 @@ const translations = {
         title: "Certificados de Asistencia – CIBSE, ESI Ciudad Real",
         desc: 'Participación en los seminarios organizados por la <span class="font-medium text-[#1c3d5a]">Ibero-American Conference on Software Engineering (CIBSE)</span>, centrados en sostenibilidad, ingeniería de software y aplicaciones de inteligencia artificial en entornos profesionales, con una <span class="font-medium text-[#1c3d5a]">duración de 20 horas</span>.'
       },
+      powerbi: {
+        title: "Curso Santander Academy Power BI",
+        desc: 'Curso enfocado en el aprendizaje de Power BI, impartido por expertos de <span class="font-medium text-[#1c3d5a]">Santander Academy</span>, que abarcó desde los fundamentos de la herramienta hasta su aplicación en análisis de datos y generación de informes interactivos, con una <span class="font-medium text-[#1c3d5a]">duración total de 8 horas</span>.'
+      },
       btn: "Ver certificado",
       btnTitle: "Ver título",
       btnCerts: "Ver certificados"
     },
     contacto: {
-      text: "¿Quieres contactar conmigo? Escríbeme o visita mis redes."
+      text: "¿Quieres contactar conmigo? Escríbeme o visita mis redes.",
+      email: "Email",
+      emailHint: "Enviar mensaje",
+      linkedinHint: "Perfil profesional"
     },
     footer: "© Adrián Caballero Camacho"
   },
   en: {
     loaderText: "Welcome",
     heroText: "Computer Engineer • Specialized in Information Technologies",
+    a11y: { skip: "Skip to content" },
     menu: {
       inicio: "Home",
       sobremi: "About Me",
@@ -305,12 +332,29 @@ const translations = {
       experiencia: "Experience",
       estudios: "Education",
       certificaciones: "Certifications",
-      contacto: "Contact"
+      contacto: "Contact",
+      idioma: "Language"
     },
     hero: {
-      downloadCV: "Download CV"
+      badge: "Computer Engineer · UCLM",
+      downloadCV: "Download CV",
+      ctaProjects: "View projects",
+      ctaContact: "Contact"
+    },
+    highlights: {
+      degree: "Bachelor's in Computer Engineering",
+      award: "Digital Builders Award · NTT DATA",
+      iker: "Web development for Iker Association"
     },
     section: {
+      eyebrow: "Profile",
+      eyebrowSkills: "Skills",
+      eyebrowStack: "Stack",
+      eyebrowWork: "Work",
+      eyebrowCareer: "Career",
+      eyebrowEducation: "Education",
+      eyebrowCerts: "Credentials",
+      eyebrowContact: "Let's talk",
       sobremi: "About Me",
       softskills: "Soft Skills",
       tecnologias: "Technologies and Tools",
@@ -341,6 +385,7 @@ const translations = {
       gestion: "Management and organization"
     },
     proyectos: {
+      featured: "Featured",
       pokedex: {
         desc: "Desktop application inspired by Pokémon that allows you to manage and consult a Pokédex with information about each pokemon, view your own Pokémon and engage in battles, either in single-player mode against AI or in multiplayer mode with two players."
       },
@@ -412,12 +457,19 @@ const translations = {
         title: "Attendance Certificates – CIBSE, ESI Ciudad Real",
         desc: 'Participation in seminars organized by the <span class="font-medium text-[#1c3d5a]">Ibero-American Conference on Software Engineering (CIBSE)</span>, focused on sustainability, software engineering and artificial intelligence applications in professional environments, with a <span class="font-medium text-[#1c3d5a]">duration of 20 hours</span>.'
       },
+      powerbi: {
+        title: "Santander Academy Power BI Course",
+        desc: 'Course focused on learning Power BI, taught by experts from <span class="font-medium text-[#1c3d5a]">Santander Academy</span>, covering from the fundamentals of the tool to its application in data analysis and interactive reporting, with a <span class="font-medium text-[#1c3d5a]">total duration of 8 hours</span>.'
+      },
       btn: "View certificate",
       btnTitle: "View title",
       btnCerts: "View certificates"
     },
     contacto: {
-      text: "Want to contact me? Write me or visit my social networks."
+      text: "Want to contact me? Write me or visit my social networks.",
+      email: "Email",
+      emailHint: "Send a message",
+      linkedinHint: "Professional profile"
     },
     footer: "© Adrián Caballero Camacho"
   }
@@ -472,18 +524,16 @@ if (langToggle) {
   langToggle.addEventListener('click', () => {
     const newLang = currentLang === 'es' ? 'en' : 'es';
     changeLanguage(newLang);
-    langToggle.querySelector('span').textContent = newLang.toUpperCase();
-    // Actualizar también el botón móvil si existe
+    langToggle.textContent = newLang.toUpperCase();
     if (langToggleMobile) {
       langToggleMobile.querySelector('#lang-label-mobile').textContent = newLang.toUpperCase();
     }
   });
   
-  // Cargar idioma guardado
   const savedLang = localStorage.getItem('preferredLanguage');
   if (savedLang && savedLang !== 'es') {
     changeLanguage(savedLang);
-    langToggle.querySelector('span').textContent = savedLang.toUpperCase();
+    langToggle.textContent = savedLang.toUpperCase();
     if (langToggleMobile) {
       langToggleMobile.querySelector('#lang-label-mobile').textContent = savedLang.toUpperCase();
     }
@@ -498,7 +548,7 @@ if (langToggleMobile) {
     langToggleMobile.querySelector('#lang-label-mobile').textContent = newLang.toUpperCase();
     // Actualizar también el botón de escritorio si existe
     if (langToggle) {
-      langToggle.querySelector('span').textContent = newLang.toUpperCase();
+      langToggle.textContent = newLang.toUpperCase();
     }
   });
 }
@@ -544,20 +594,19 @@ if (sobreMi) {
   obsSobreMi.observe(sobreMi);
 }
 
-// Menú lateral activo
+// Navegación superior activa
 const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll("#side-menu .menu-btn");
+const desktopNavLinks = document.querySelectorAll("#desktop-nav a");
 
 const observerMenu = new IntersectionObserver(entries => {
   entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
     const id = entry.target.getAttribute("id");
-    const link = document.querySelector(`#side-menu a[href="#${id}"]`);
-    if (entry.isIntersecting) {
-      navLinks.forEach(btn => btn.classList.remove("active"));
-      link?.classList.add("active");
-    }
+    desktopNavLinks.forEach(link => {
+      link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+    });
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.35 });
 
 sections.forEach(section => observerMenu.observe(section));
 
@@ -646,7 +695,40 @@ projects.forEach(card => projectsObserver.observe(card));
     } else {
       typeHero();
     }
-  }, 3000);
+  }, 2500);
+
+  // Barra de progreso de scroll
+  const scrollProgress = document.getElementById("scroll-progress");
+  const backToTop = document.getElementById("back-to-top");
+
+  function onScrollUi() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+    if (scrollProgress) {
+      scrollProgress.style.width = `${progress}%`;
+    }
+    if (backToTop) {
+      backToTop.classList.toggle("visible", scrollTop > 420);
+    }
+  }
+
+  window.addEventListener("scroll", onScrollUi, { passive: true });
+  onScrollUi();
+
+  backToTop?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // CTAs del hero
+  document.querySelectorAll(".hero-actions a[href^='#']").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
 });
 
 // Animación secuencial de los contenedores de las tecnologías
@@ -700,28 +782,15 @@ if (timelines.length > 0) {
   updateTimelineProgress();
 }
 
-// Control de navegación suave para el menú lateral (pantallas grandes)
-document.querySelectorAll('#side-menu a[href^="#"]').forEach(link => {
+// Navegación suave — header desktop
+document.querySelectorAll('#desktop-nav a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
-    
     const targetId = link.getAttribute('href');
-    
-    // Si es el enlace de inicio, hacer scroll al top de la página
     if (targetId === '#inicio') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      // Para otras secciones, hacer scroll normal
-      const targetSection = document.querySelector(targetId);
-      if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
+      document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 });
