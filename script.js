@@ -688,11 +688,13 @@ projects.forEach(card => projectsObserver.observe(card));
       overlay.style.opacity = "0";
       setTimeout(() => {
         overlay.style.display = "none";
+        document.body.classList.remove("loading");
         typeHero();
       }, 700);
     } else if (!shouldShowLoader) {
       // Ya se ejecutó typeHero antes
     } else {
+      document.body.classList.remove("loading");
       typeHero();
     }
   }, 2500);
