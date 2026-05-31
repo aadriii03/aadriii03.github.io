@@ -815,6 +815,13 @@ section {
   font-size: 0.72rem !important;
 }
 
+/* Separación entre el icono y el nombre dentro de las tarjetas de tecnologías */
+.tech-card i {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.45rem;
+}
+
 /* ─── Projects ─── */
 .project-card {
   opacity: 0;
@@ -1003,6 +1010,18 @@ a[class*="rounded-full"]:hover {
   color: var(--text-dim) !important;
   font-family: var(--font-mono);
   font-size: 0.72rem;
+}
+
+/* Separación entre icono y texto en las tarjetas de contacto (mantiene centrado) */
+.contact-card-icon {
+  display: block;
+  margin: 0 0 0.45rem 0;
+  text-align: center;
+}
+.contact-card-icon svg,
+.contact-card-icon i {
+  display: block;
+  margin: 0 auto;
 }
 
 /* ─── Footer ─── */
